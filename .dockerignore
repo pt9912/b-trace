@@ -1,0 +1,15 @@
+.git/
+.agents/
+.codex/
+.gradle/
+build/
+**/build/
+out/
+target/
+.idea/
+.vscode/
+*.iml
+*.log
+*.tmp
+*.tar
+*.zip

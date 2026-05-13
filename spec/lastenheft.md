@@ -1,13 +1,22 @@
-# Lastenheft  
+# Lastenheft
 
 ## b-trace (Incident- & Replay-System (IRS))
 
 | Kennung | IRS-LH-001      |
 | ------- | --------------- |
-| Version | 1.0             |
+| Version | 1.1             |
 | Datum   | 13.05.2026      |
 | Status  | Entwurf         |
 | Autor   | Dietmar Burkard |
+
+---
+
+## Änderungshistorie
+
+| Version | Datum      | Änderung |
+| ------- | ---------- | -------- |
+| 1.0     | 13.05.2026 | Initialer Entwurf |
+| 1.1     | 13.05.2026 | Verfeinerung von Workflows, Datenklassifizierung, Schnittstellen und Risikobehandlung |
 
 ---
 
@@ -108,6 +117,18 @@ Das System besteht aus:
 - Observability-Komponenten
 - Benutzer- und Rechteverwaltung
 
+## 3.2 Komponentenverantwortung
+
+| Komponente | Verantwortung |
+| ---------- | ------------- |
+| REST-Gateway | Annahme, Authentifizierung und Validierung externer API-Aufrufe |
+| Replay-Engine | Planung, Freigabeprüfung, Dry-Run und Ausführung von Replays |
+| Event-Streaming | Asynchrone Verarbeitung von Incident-, Replay- und Audit-Ereignissen |
+| Incident-Management | Verwaltung von Incidents, Status, Priorität, Kommentaren und Verknüpfungen |
+| Audit-Logging | Manipulationsresistente Nachvollziehbarkeit sicherheits- und fachrelevanter Aktionen |
+| Observability | Bereitstellung von Traces, Metriken und Logs für Betrieb und Analyse |
+| Benutzer- und Rechteverwaltung | Rollen, Berechtigungen und Zugriffskontrolle |
+
 ---
 
 # 4 Produktfunktionen
@@ -157,7 +178,7 @@ Das System besteht aus:
 
 ---
 
-## 4.4 Security
+## 4.4 Sicherheit
 
 | Kennung   | Beschreibung                                       |
 | --------- | -------------------------------------------------- |
@@ -209,6 +230,20 @@ Das System besteht aus:
 
 ---
 
+## 4.8 Fachliche Workflows
+
+| Kennung | Workflow | Beschreibung |
+| ------- | -------- | ------------ |
+| WF-001 | Request-Aufzeichnung | Ein eingehender Request wird validiert, mit Correlation-ID versehen, maskiert, persistiert und optional als Event publiziert |
+| WF-002 | Incident-Erzeugung | Ein Incident wird manuell oder regelbasiert aus Request-, Response-, Event- oder Fehlerdaten erzeugt |
+| WF-003 | Replay-Vorbereitung | Ein berechtigter Benutzer wählt Request, Zielsystem, Payload-Mutation, Rate-Limit und Ausführungsmodus aus |
+| WF-004 | Replay-Freigabe | Produktive oder risikobehaftete Replays werden blockiert, bis eine berechtigte Freigabe vorliegt |
+| WF-005 | Replay-Ausführung | Die Replay-Engine führt Dry-Run oder Replay aus, speichert Ergebnisdaten und erzeugt Audit- und Observability-Daten |
+| WF-006 | Dead-Letter-Verarbeitung | Fehlerhafte Events werden nach konfigurierten Wiederholungen in eine Dead Letter Queue verschoben und bleiben analysierbar |
+| WF-007 | Datenschutzanfrage | Personenbezogene Daten werden anhand definierter Identifikatoren gesucht, exportiert oder gemäß Aufbewahrungsregeln gelöscht |
+
+---
+
 # 5 Produktdaten
 
 ## 5.1 Zu speichernde Daten
@@ -225,6 +260,18 @@ Das System besteht aus:
 | D-008   | Datenschutz- und Maskierungsregeln |
 | D-009   | Replay-Freigaben und Replay-Ergebnisse |
 | D-010   | Aufbewahrungs- und Löschfristen |
+
+---
+
+## 5.2 Datenklassifizierung
+
+| Klasse | Beispiele | Mindestschutz |
+| ------ | --------- | ------------- |
+| Öffentlich | Dokumentation, nicht-sensitive Systemmetadaten | Keine besonderen Schutzanforderungen |
+| Intern | technische Konfiguration, nicht-sensitive Logs | Zugriff nur für authentifizierte Benutzer |
+| Vertraulich | Requests, Responses, Incidents, Replay-Ergebnisse | Rollenbasierter Zugriff, Transportverschlüsselung, Auditierung |
+| Sensibel | Roh-Payloads, personenbezogene Daten, Secrets, Tokens | Maskierung oder Pseudonymisierung, gesonderte Berechtigung, Verschlüsselung ruhender Daten |
+| Audit-kritisch | Audit-Einträge, Freigaben, Rollenänderungen | Manipulationsresistente Speicherung und eingeschränkte Löschbarkeit |
 
 ---
 
@@ -337,15 +384,51 @@ Die konkrete Technologieauswahl aus Kapitel 7 und 18 ist im Pflichtenheft zu fin
 
 ---
 
+## 9.2 REST-API-Ressourcen
+
+| Kennung | Ressource | Zweck |
+| ------- | --------- | ----- |
+| API-001 | `/requests` | Suche, Anzeige und Verwaltung aufgezeichneter Requests und Responses |
+| API-002 | `/incidents` | Erzeugung, Bearbeitung, Kommentierung und Statusverwaltung von Incidents |
+| API-003 | `/replays` | Vorbereitung, Dry-Run, Freigabe, Ausführung und Auswertung von Replays |
+| API-004 | `/audit-events` | Recherche von Audit-Einträgen für Auditoren und Administratoren |
+| API-005 | `/targets` | Verwaltung freigegebener Replay-Zielsysteme und produktiver Zielkennzeichnung |
+| API-006 | `/retention-policies` | Verwaltung von Aufbewahrungs- und Löschregeln |
+| API-007 | `/users` und `/roles` | Benutzer-, Rollen- und Berechtigungsverwaltung |
+| API-008 | `/health` und `/metrics` | Betriebsstatus und Metriken für Monitoring-Systeme |
+
+Alle REST-API-Ressourcen müssen über OpenAPI dokumentiert werden. Schreibende Operationen müssen authentifiziert, autorisiert und auditiert werden.
+
+---
+
+## 9.3 Event-Schnittstellen
+
+| Kennung | Event | Zweck |
+| ------- | ----- | ----- |
+| EVT-001 | `request.recorded` | Ein Request und optional eine Response wurden aufgezeichnet |
+| EVT-002 | `incident.created` | Ein Incident wurde erzeugt |
+| EVT-003 | `incident.updated` | Status, Priorität, Kommentar oder Verknüpfung eines Incidents wurde geändert |
+| EVT-004 | `replay.requested` | Ein Replay wurde vorbereitet oder beantragt |
+| EVT-005 | `replay.approved` | Ein Replay wurde freigegeben |
+| EVT-006 | `replay.executed` | Ein Replay oder Dry-Run wurde ausgeführt |
+| EVT-007 | `audit.event.created` | Ein auditpflichtiges Ereignis wurde gespeichert |
+| EVT-008 | `dead-letter.created` | Ein Event wurde nach fehlgeschlagener Verarbeitung in die Dead Letter Queue verschoben |
+
+Event-Payloads müssen versioniert, schema-validierbar und über Correlation-ID nachvollziehbar sein.
+
+---
+
 # 10 Risiken
 
-| Kennung | Beschreibung                     |
-| ------- | -------------------------------- |
-| R-001   | Hohe Datenmengen                 |
-| R-002   | Replay-Inkonsistenzen durch Seiteneffekte oder nicht-idempotente Zielsysteme |
-| R-003   | Komplexität verteilter Systeme   |
-| R-004   | Netzwerkabhängigkeiten           |
-| R-005   | Datenschutzanforderungen         |
+| Kennung | Beschreibung | Gegenmaßnahme |
+| ------- | ------------ | ------------- |
+| R-001   | Hohe Datenmengen | Skalierbare Persistenz, Aufbewahrungsregeln, Performance-Tests und Monitoring |
+| R-002   | Replay-Inkonsistenzen durch Seiteneffekte oder nicht-idempotente Zielsysteme | Dry-Run, Freigaben, Zielsystem-Whitelist, Idempotenzkennzeichnung und Rate-Limits |
+| R-003   | Komplexität verteilter Systeme | Correlation-IDs, Distributed Tracing, Architekturtests und klare Modulgrenzen |
+| R-004   | Netzwerkabhängigkeiten | Timeouts, Retries, Circuit-Breaker-Konzept und Dead-Letter-Verarbeitung |
+| R-005   | Datenschutzanforderungen | Maskierung, Pseudonymisierung, Zugriffskontrolle, Aufbewahrungsregeln und Auditierung |
+| R-006   | Missbrauch von Replay-Funktionen | Rollenmodell, produktive Freigaben, manipulationsresistente Auditierung und sichere Standardkonfiguration |
+| R-007   | Vendor-Lock-in durch Infrastrukturentscheidungen | Ports-and-Adapters-Prinzip und austauschbare Infrastrukturadapter |
 
 ---
 
@@ -363,6 +446,9 @@ Die konkrete Technologieauswahl aus Kapitel 7 und 18 ist im Pflichtenheft zu fin
 | Dry-Run           | Validierung eines Replays ohne Aufruf des Zielsystems |
 | Whitelist         | Freigabeliste erlaubter Replay-Zielsysteme |
 | Roh-Payload       | Unmaskierter Request- oder Response-Inhalt |
+| Aufbewahrungsregel | Konfiguration zur Speicherdauer und Löschung bestimmter Datenklassen |
+| Payload-Mutation  | Kontrollierte Veränderung eines gespeicherten Payloads vor Replay |
+| Zielsystem        | System, gegen das ein Replay ausgeführt werden kann |
 
 ---
 
@@ -394,6 +480,9 @@ Anforderungen in den Kapiteln 1.1, 4, 5, 6, 8, 9, 13, 15, 16, 17 und 20 gelten a
 | AB-010  | Performance | In der dokumentierten Referenzumgebung werden 1000 Requests/s bei 10 KiB Payload-Größe mit maximal 1% Fehlerrate erreicht; Einzel-Replay erfüllt p95 < 500ms ohne externen Zielsystem-Timeout |
 | AB-011  | Datenlebenszyklus | Konfigurierte Aufbewahrungsfristen löschen abgelaufene Request-, Response-, Replay- und Incident-Daten automatisiert, ohne Audit-Nachweise vor Ablauf ihrer Frist zu entfernen |
 | AB-012  | Architekturvalidierung | CI führt Architekturtests aus und bricht bei Domänenabhängigkeiten auf Framework- oder Infrastrukturcode ab |
+| AB-013  | REST-API-Dokumentation | Alle in Kapitel 9.2 beschriebenen Ressourcen sind in einer validen OpenAPI-Spezifikation mit Authentifizierungs- und Fehlerantworten dokumentiert |
+| AB-014  | Event-Versionierung | Events aus Kapitel 9.3 enthalten Schema-Version, Event-ID, Zeitstempel und Correlation-ID und werden bei ungültigem Schema abgewiesen oder in die Dead Letter Queue verschoben |
+| AB-015  | Rollenmodell | Die Rollen Viewer, Analyst, Replayer, Administrator und Auditor erfüllen die Mindestrechte aus Kapitel 4.7 und verhindern nicht autorisierte Roh-Payload-, Replay- und Administrationszugriffe |
 
 ---
 
@@ -456,7 +545,7 @@ Anforderungen in den Kapiteln 1.1, 4, 5, 6, 8, 9, 13, 15, 16, 17 und 20 gelten a
 | TEST-TYPE-004 | Contract-Tests    |
 | TEST-TYPE-005 | End-to-End-Tests  |
 | TEST-TYPE-006 | Performance-Tests |
-| TEST-TYPE-007 | Security-Tests    |
+| TEST-TYPE-007 | Sicherheitstests  |
 
 ---
 
@@ -472,14 +561,14 @@ Anforderungen in den Kapiteln 1.1, 4, 5, 6, 8, 9, 13, 15, 16, 17 und 20 gelten a
 
 ---
 
-# 16 Quality Gates
+# 16 Qualitäts-Gates
 
-## 16.1 Build Quality Gates
+## 16.1 Build-Qualitäts-Gates
 
 | Kennung | Beschreibung                                                     |
 | ------- | ---------------------------------------------------------------- |
 | QG-001  | Build darf bei unterschrittener Coverage nicht erfolgreich sein  |
-| QG-002  | Build darf bei kritischen oder hohen Security-Issues ohne dokumentierte Ausnahme nicht erfolgreich sein |
+| QG-002  | Build darf bei kritischen oder hohen Sicherheitslücken ohne dokumentierte Ausnahme nicht erfolgreich sein |
 | QG-003  | Build darf bei Architekturverletzungen nicht erfolgreich sein    |
 | QG-004  | Build darf bei fehlschlagenden Tests nicht erfolgreich sein      |
 | QG-005  | Build darf bei statischen Analysefehlern nicht erfolgreich sein  |
@@ -521,9 +610,9 @@ Anforderungen in den Kapiteln 1.1, 4, 5, 6, 8, 9, 13, 15, 16, 17 und 20 gelten a
 | -------- | --------------------------------- |
 | CICD-001 | Vollautomatische Build-Pipeline   |
 | CICD-002 | Automatische Testausführung       |
-| CICD-003 | Automatische Quality-Gates        |
+| CICD-003 | Automatische Qualitäts-Gates      |
 | CICD-004 | Containerisierte Builds           |
-| CICD-005 | Security-Scanning                 |
+| CICD-005 | Sicherheitsscans                  |
 | CICD-006 | Dependency-Scanning               |
 | CICD-007 | Automatisierte Artefakt-Erzeugung |
 
@@ -550,9 +639,9 @@ Anforderungen in den Kapiteln 1.1, 4, 5, 6, 8, 9, 13, 15, 16, 17 und 20 gelten a
 | Mocking           | Mockito                       |
 | Integrationstests | Testcontainers                |
 | Coverage          | JaCoCo                        |
-| Quality Gate      | SonarQube                     |
+| Qualitäts-Gate    | SonarQube                     |
 | API-Tests         | RestAssured                   |
-| Security-Scanning | OWASP Dependency Check        |
+| Sicherheitsscans  | OWASP Dependency Check        |
 | Container-Tests   | Testcontainers                |
 | CI/CD             | GitHub Actions oder GitLab CI |
 
@@ -569,7 +658,7 @@ Anforderungen in den Kapiteln 1.1, 4, 5, 6, 8, 9, 13, 15, 16, 17 und 20 gelten a
 | NFQ-005 | Austauschbarkeit von Infrastruktur |
 | NFQ-006 | Cloud-Native-Fähigkeit             |
 | NFQ-007 | Observability-by-Default           |
-| NFQ-008 | Security-by-Default                |
+| NFQ-008 | Sicherheit durch sichere Standardkonfiguration |
 
 ---
 
@@ -579,14 +668,17 @@ Anforderungen in den Kapiteln 1.1, 4, 5, 6, 8, 9, 13, 15, 16, 17 und 20 gelten a
 | ------- | ----------------------------------- |
 | DOD-001 | Alle Tests erfolgreich              |
 | DOD-002 | Coverage >= 90%                     |
-| DOD-003 | Keine kritischen SonarQube Findings |
+| DOD-003 | Keine kritischen SonarQube-Befunde |
 | DOD-004 | Architekturtests erfolgreich        |
 | DOD-005 | Container-Build erfolgreich         |
 | DOD-006 | OpenAPI-Dokumentation vorhanden     |
 | DOD-007 | CHANGELOG aktualisiert              |
 | DOD-008 | README aktualisiert                 |
 | DOD-009 | OpenTelemetry integriert            |
-| DOD-010 | Security-Checks erfolgreich         |
+| DOD-010 | Sicherheitsprüfungen erfolgreich    |
 | DOD-011 | Replay-Schutzmechanismen erfolgreich getestet |
 | DOD-012 | Datenschutz-, Maskierungs- und Aufbewahrungsregeln erfolgreich getestet |
 | DOD-013 | Abnahmekriterien aus Kapitel 13 automatisiert oder nachvollziehbar manuell geprüft |
+| DOD-014 | OpenAPI-Spezifikation gegen implementierte REST-API validiert |
+| DOD-015 | Event-Schemata versioniert und validiert |
+| DOD-016 | Betriebs- und Sicherheitsentscheidungen im Pflichtenheft oder in Architecture Decision Records dokumentiert |

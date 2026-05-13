@@ -3,7 +3,7 @@
 B-Trace ist eine cloud-native Incident- und Replay-Plattform zur Analyse, Nachverfolgung und Wiederholung verteilter Transaktionen in Banking- und Enterprise-Systemen.  
 Das System basiert auf einer hexagonalen Architektur und verfolgt einen konsequenten Domain-Driven- und SOLID-Ansatz, um eine hohe Wartbarkeit und Erweiterbarkeit sicherzustellen.  
 Requests, Events und technische Fehler können vollständig auditierbar gespeichert, analysiert und reproduzierbar erneut ausgeführt werden.  
-Die Plattform integriert moderne Technologien wie OpenTelemetry, Kafka, PostgreSQL, Keycloak sowie containerisierte Deployments mit Docker und Kubernetes.  
+Die Plattform ist auf moderne Technologien wie OpenTelemetry, Kafka, PostgreSQL, Keycloak sowie containerisierte Deployments mit Docker und Kubernetes ausgerichtet.  
 Besonderer Fokus liegt auf Observability, Event-Driven-Architecture, Replay-Mechanismen und einer klaren Trennung zwischen Domäne, Infrastruktur und Adaptern.  
 Alle Komponenten werden durch automatisierte Tests, Architekturvalidierung und Quality-Gates mit mindestens 90% Testabdeckung abgesichert.
 
@@ -33,6 +33,37 @@ Replay-Funktionen werden als privilegierte Operationen behandelt. Die Produktanf
 ## Dokumentation
 
 - [Lastenheft](spec/lastenheft.md): Produktziele, funktionale Anforderungen, Quality Gates, Abnahmekriterien und Definition of Done.
+- [Architektur](spec/architecture.md): Zielarchitektur, Komponenten, Ports, Adapter, Datenfluesse und offene Architekturpunkte.
+- [Roadmap](docs/plan/planning/in-progress/roadmap.md): geplanter Umsetzungsverlauf mit Meilensteinen und Abnahmeschnitten.
+- [ADRs](docs/plan/adr): dokumentierte Architekturentscheidungen.
+- [User-Dokumentation](docs/user): anwender- und betreibernahe Erklaerungen zu Funktion, Replay-Sicherheit und Qualitaet.
+
+## Dokumentationsstruktur
+
+```text
+spec/                         normative Spezifikation
+docs/plan/adr/                Architekturentscheidungen
+docs/plan/planning/in-progress/ aktive Roadmap und laufende Plaene
+docs/plan/planning/open/      offene Folgearbeiten und Trigger-Watch
+docs/plan/planning/done/      abgeschlossene Plaene
+docs/user/                    Anwender- und Betreiber-Dokumentation
+docs/archive/                 historische oder unverbindliche Ideenskizzen
+```
+
+## Entwicklung
+
+Das Projekt ist fuer einen Gradle-basierten Java-21-Aufbau vorbereitet.
+Solange noch kein Gradle-Build angelegt ist, laufen die Make- und
+Docker-Ziele fuer Dokumentationspruefungen und ueberspringen Gradle
+explizit.
+
+```bash
+make help
+make docs-check
+make gates
+make docker-docs-check
+make docker-build
+```
 
 ## Projektstatus
 
