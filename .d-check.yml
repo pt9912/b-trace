@@ -26,7 +26,9 @@ ids:
       target: spec/lastenheft.md
     - regex: 'Q-(MNT|PERF|SEC)-\d{3}'
       target: spec/lastenheft.md
-    - regex: '(M|W|A|PE|ROLE|D|IF|AB|DEP|COV)-\d{3}'
+    - regex: '(M|W|A|PE|ROLE|D|IF|AB|DEP|COV|BB|ARC|CC|ARCHTEST)-\d{3}'
+      target: spec/lastenheft.md
+    - regex: 'T-(BE|FE|INF)-\d{3}'
       target: spec/lastenheft.md
     - regex: 'AR-(P|OPEN)-\d{3}'
       target: spec/architecture.md
@@ -37,7 +39,7 @@ ids:
 matrix:
   classes:
     - name: spec-straten
-      paths: [spec/lastenheft.md, spec/architecture.md]
+      paths: [spec/lastenheft.md, spec/spezifikation.md, spec/architecture.md]
     - name: adr
       paths: ["docs/plan/adr/[0-9]*.md"]
     - name: slice

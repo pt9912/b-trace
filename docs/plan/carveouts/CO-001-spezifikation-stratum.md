@@ -1,6 +1,7 @@
 # CO-001: Spezifikations-Stratum fehlt
 
-**Status:** Aktiv
+**Status:** Aufgeloest (2026-06-12,
+[slice-004](../planning/done/slice-004-spezifikation-stratum.md))
 
 **Datum angelegt:** 2026-06-12. **Letzte Pruefung:** 2026-06-12.
 
@@ -9,8 +10,11 @@ Precedence, Rang 2)
 
 **Geltungsbereich:** `spec/`
 
-**Folge-Slice:** — entsteht beim Zuenden des Triggers (Bezug:
-[RM-OPEN-001](../planning/in-progress/roadmap.md), [RM-OPEN-002](../planning/in-progress/roadmap.md))
+**Folge-Slice:**
+[slice-004](../planning/done/slice-004-spezifikation-stratum.md)
+(aufgeloest per Nutzerauftrag vor der Entscheidung von
+[RM-OPEN-001](../planning/in-progress/roadmap.md) und
+[RM-OPEN-002](../planning/in-progress/roadmap.md))
 
 ---
 
@@ -37,12 +41,16 @@ oder [RM-OPEN-002](../planning/in-progress/roadmap.md) (Build-System) per ADR.
 
 ## Verifikation (nach Aufloesung)
 
-- [ ] `spec/spezifikation.md` existiert und traegt die erste
-      ADR-geschaerfte Festlegung.
-- [ ] Source-Precedence-Tabellen in `harness/README.md` und
+- [x] `spec/spezifikation.md` existiert und traegt erste verbindliche
+      Festlegungen (aus dem Lastenheft uebernommen; die erste
+      ADR-Schaerfung folgt mit der Entscheidung von
+      [T-BE-002](../../../spec/lastenheft.md) /
+      [T-BE-003](../../../spec/lastenheft.md)).
+- [x] Source-Precedence-Tabellen in `harness/README.md` und
       `AGENTS.md` verlinken Rang 2.
-- [ ] [MR-002](../../../harness/conventions.md) per neuem `MR`-Eintrag aufgehoben.
-- [ ] `make gates` gruen.
+- [x] [MR-002](../../../harness/conventions.md) per neuem `MR`-Eintrag
+      aufgehoben ([MR-006](../../../harness/conventions.md)).
+- [x] `make gates` gruen.
 - [ ] Datei nach `docs/plan/carveouts/done/` bewegt (reiner `git mv`).
 
 ## Geschichte
@@ -50,3 +58,4 @@ oder [RM-OPEN-002](../planning/in-progress/roadmap.md) (Build-System) per ADR.
 | Datum | Ereignis | Verweis |
 | ----- | -------- | ------- |
 | 2026-06-12 | Angelegt | [slice-001](../planning/done/slice-001-harness-bootstrap.md) |
+| 2026-06-12 | Aufgeloest per Nutzerauftrag | [slice-004](../planning/done/slice-004-spezifikation-stratum.md) |

@@ -10,5 +10,6 @@ Abgeschlossen:
   (inkl. umgesetzter
   [Trigger-Watch-Notiz](note-d-check-ausbau.md))
 - [slice-003: ids-Vollausbau](slice-003-ids-vollausbau.md)
+- [slice-004: Spezifikations-Stratum](slice-004-spezifikation-stratum.md)
 
 Noch kein Code-Umsetzungsslice abgeschlossen.

@@ -20,7 +20,7 @@ gegenueber der adoptierten Baseline leben in
 | Rang | Datei | Charakter |
 | ---- | ----- | --------- |
 | 1 | [spec/lastenheft.md](../spec/lastenheft.md) | vertraglich abnahmebindend |
-| 2 | `spec/spezifikation.md` | technisch fortschreibbar — noch nicht vorhanden, siehe [MR-002](conventions.md) und [CO-001](../docs/plan/carveouts/CO-001-spezifikation-stratum.md) |
+| 2 | [spec/spezifikation.md](../spec/spezifikation.md) | technisch fortschreibbar |
 | 3 | [spec/architecture.md](../spec/architecture.md) | Komponenten/Sequenzen, meilensteinfrei |
 | 4 | [docs/plan/adr/README.md](../docs/plan/adr/README.md) | ADR-Index |
 | 5 | [docs/plan/planning/in-progress/roadmap.md](../docs/plan/planning/in-progress/roadmap.md) | Roadmap und aktuelle Welle |
@@ -37,6 +37,7 @@ hoehere. ADRs duerfen die Spezifikation schaerfen, nie das Lastenheft.
 | Quelle | Inhalt |
 | ------ | ------ |
 | [spec/lastenheft.md](../spec/lastenheft.md) | Anforderungen, IDs, Akzeptanzkriterien |
+| [spec/spezifikation.md](../spec/spezifikation.md) | technische Festlegungen, Defaults, Schemas |
 | [spec/architecture.md](../spec/architecture.md) | Komponenten, Schichten, Constraints |
 | [docs/plan/adr/](../docs/plan/adr/README.md) | Architekturentscheidungen |
 | [docs/plan/planning/](../docs/plan/planning/in-progress/roadmap.md) | Roadmap und Slice-Plaene |

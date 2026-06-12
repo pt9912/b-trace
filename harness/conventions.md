@@ -119,6 +119,18 @@ Form-Fragen, nicht autoritativ ueber Inhalt.
   ([slice-002](../docs/plan/planning/done/slice-002-d-check-ids-matrix.md)).
 - **Aufloesungs-Trigger:** permanent.
 
+### MR-006 — Aufhebung von MR-002: Rang 2 besetzt
+
+- **Datum:** 2026-06-12
+- **Geltungsbereich:** `harness/README.md`, Abschnitt Source precedence
+- **Adaption:** hebt MR-002 auf. `spec/spezifikation.md` existiert;
+  die Source Precedence traegt alle drei Spec-Straten.
+- **Begruendung:** Nutzerauftrag zur Anlage des
+  Spezifikations-Stratums; Aufloesung von
+  [CO-001](../docs/plan/carveouts/CO-001-spezifikation-stratum.md)
+  ([slice-004](../docs/plan/planning/done/slice-004-spezifikation-stratum.md)).
+- **Aufloesungs-Trigger:** permanent.
+
 ## Repo-lokale Schreib- und Strukturregeln
 
 - Dokumentationssprache ist Deutsch; neue Texte in umlautfreier

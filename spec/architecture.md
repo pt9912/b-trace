@@ -25,8 +25,8 @@ Leitplanken werden hier nachvollziehbar gemacht.
 
 | Kennung | Prinzip | Bezug |
 | ------- | ------- | ----- |
-| AR-P-001 | Hexagonale Architektur mit klaren Ports und Adaptern | ARC-001..003 |
-| AR-P-002 | Domäne bleibt frei von Framework-, Datenbank- und Messaging-Abhängigkeiten | CC-003, ARCHTEST-004 |
+| AR-P-001 | Hexagonale Architektur mit klaren Ports und Adaptern | [ARC-001..003](lastenheft.md) |
+| AR-P-002 | Domäne bleibt frei von Framework-, Datenbank- und Messaging-Abhängigkeiten | [CC-003](lastenheft.md), [ARCHTEST-004](lastenheft.md) |
 | AR-P-003 | Replay ist eine privilegierte, auditpflichtige Operation | [F-REP-006..012](lastenheft.md), [F-SEC-006](lastenheft.md) |
 | AR-P-004 | Produktive Replays sind standardmäßig blockiert, bis Whitelist und Freigabe greifen | [Q-SEC-005](lastenheft.md) |
 | AR-P-005 | Datenschutz und Maskierung liegen vor Persistenz und Replay-Auswertung | [F-DAT-001..007](lastenheft.md) |

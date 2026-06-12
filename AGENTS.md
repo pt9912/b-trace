@@ -28,9 +28,8 @@ In dieser Reihenfolge:
 
 1. [spec/lastenheft.md](spec/lastenheft.md) — vertraglich
    abnahmebindend.
-2. `spec/spezifikation.md` — noch nicht vorhanden
-   ([MR-002](harness/conventions.md),
-   [CO-001](docs/plan/carveouts/CO-001-spezifikation-stratum.md)).
+2. [spec/spezifikation.md](spec/spezifikation.md) — technisch
+   verbindlich, fortschreibbar.
 3. [spec/architecture.md](spec/architecture.md) — Komponenten- und
    Verantwortungssicht.
 4. [docs/plan/adr/README.md](docs/plan/adr/README.md) — ADR-Index.

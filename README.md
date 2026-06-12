@@ -90,6 +90,7 @@ Rate-Limits, Audit-Logging und Payload-Maskierung — sind unter
 ## Dokumentation
 
 - [Lastenheft](spec/lastenheft.md): Produktziele, funktionale Anforderungen, Quality Gates, Abnahmekriterien und Definition of Done.
+- [Spezifikation](spec/spezifikation.md): technisch verbindliche Festlegungen, Defaults und Schemas; fortschreibbar ohne Lastenheft-Aenderung.
 - [Architektur](spec/architecture.md): Zielarchitektur, Komponenten, Ports, Adapter, Datenfluesse und offene Architekturpunkte.
 - [Roadmap](docs/plan/planning/in-progress/roadmap.md): geplanter Umsetzungsverlauf mit Meilensteinen und Abnahmeschnitten.
 - [ADR-Index](docs/plan/adr/README.md): dokumentierte Architekturentscheidungen.
