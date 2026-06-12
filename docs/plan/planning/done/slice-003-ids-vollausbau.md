@@ -5,7 +5,7 @@
 **Welle:** ohne Welle (Harness-Pflege)
 
 **Bezug:** [slice-002](slice-002-d-check-ids-matrix.md),
-[CO-001](../../carveouts/CO-001-spezifikation-stratum.md)
+[CO-001](../../carveouts/done/CO-001-spezifikation-stratum.md)
 
 **Autor:** Dietmar Burkard. **Datum:** 2026-06-12.
 
@@ -56,7 +56,7 @@ DoD vollstaendig, `make gates` gruen, Commit mit Kennungs-Referenz.
   Bezug-Spalte der Architekturprinzipien sind in keiner Quelle als
   Schema deklariert und haben kein ids-Muster; Klaerung gehoert zur
   Aufloesung von
-  [CO-001](../../carveouts/CO-001-spezifikation-stratum.md).
+  [CO-001](../../carveouts/done/CO-001-spezifikation-stratum.md).
 - Links auf das Lastenheft zeigen auf die Datei, nicht auf
   Kapitel-Anker; Anker-Praezision ist moeglicher Folgeausbau.
 
@@ -70,7 +70,7 @@ DoD vollstaendig, `make gates` gruen, Commit mit Kennungs-Referenz.
   Scope-Reduktionen sind vorzuschlagen, nicht still zu entscheiden.
 - Folgearbeiten: keine neuen `open/`-Eintraege; die ungeklaerten
   Kennungs-Familien haengen an
-  [CO-001](../../carveouts/CO-001-spezifikation-stratum.md).
+  [CO-001](../../carveouts/done/CO-001-spezifikation-stratum.md).
 
 ## 8. Sub-Area-Modus-Begruendung
 

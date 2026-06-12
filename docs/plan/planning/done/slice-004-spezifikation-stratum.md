@@ -4,7 +4,7 @@
 
 **Welle:** ohne Welle (Spec-Pflege)
 
-**Bezug:** [CO-001](../../carveouts/CO-001-spezifikation-stratum.md),
+**Bezug:** [CO-001](../../carveouts/done/CO-001-spezifikation-stratum.md),
 [MR-006](../../../../harness/conventions.md),
 [T-BE-001](../../../../spec/lastenheft.md)
 
@@ -30,7 +30,7 @@ Technologie-Festlegungen fuellen — ohne offene Entscheidungen
       Rang 2; Guides-Tabelle ergaenzt.
 - [x] [MR-006](../../../../harness/conventions.md) hebt
       [MR-002](../../../../harness/conventions.md) auf.
-- [x] [CO-001](../../carveouts/CO-001-spezifikation-stratum.md)
+- [x] [CO-001](../../carveouts/done/CO-001-spezifikation-stratum.md)
       aufgeloest und nach `done/` ueberfuehrt.
 - [x] ids-Muster um die Lastenheft-Familien `T-*`, `BB-`, `ARC-`,
       `CC-`, `ARCHTEST-` ergaenzt; matrix-Klasse spec-straten umfasst
@@ -45,13 +45,13 @@ Technologie-Festlegungen fuellen — ohne offene Entscheidungen
 | `.d-check.yml` | update | neue ids-Familien, matrix-Klasse |
 | `spec/architecture.md` | update | neue Kennungs-Familien verlinken |
 | harness/README.md, AGENTS.md, conventions.md | update | Rang 2, Guides, [MR-006](../../../../harness/conventions.md) |
-| [CO-001](../../carveouts/CO-001-spezifikation-stratum.md) | update + move | Aufloesung |
+| [CO-001](../../carveouts/done/CO-001-spezifikation-stratum.md) | update + move | Aufloesung |
 
 ## 4. Trigger
 
 Nutzerauftrag 2026-06-12 („Jetzt brauchen wir im spec Ordner noch
 spezifikation.md") — zuendet den Aufloesungs-Trigger von
-[CO-001](../../carveouts/CO-001-spezifikation-stratum.md) vor der
+[CO-001](../../carveouts/done/CO-001-spezifikation-stratum.md) vor der
 urspruenglich erwarteten Framework-/Build-Entscheidung.
 
 ## 5. Closure-Trigger

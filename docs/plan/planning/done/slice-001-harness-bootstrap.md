@@ -5,7 +5,7 @@
 **Welle:** ohne Welle (Bootstrap)
 
 **Bezug:** [ADR-0002](../../adr/0002-harness-bootstrap.md),
-[CO-001](../../carveouts/CO-001-spezifikation-stratum.md) bis
+[CO-001](../../carveouts/done/CO-001-spezifikation-stratum.md) bis
 [CO-004](../../carveouts/CO-004-durchsetzungsschicht.md),
 [MR-000](../../../../harness/conventions.md) bis
 [MR-004](../../../../harness/conventions.md)
@@ -28,7 +28,7 @@ Konventionsspeicher, Carveout-Register und ADR-Index anlegen.
       dokumentiert die Adoption;
       [ADR-Index](../../adr/README.md) existiert.
 - [x] Fehlende Mechanik ist als
-      [CO-001](../../carveouts/CO-001-spezifikation-stratum.md) bis
+      [CO-001](../../carveouts/done/CO-001-spezifikation-stratum.md) bis
       [CO-004](../../carveouts/CO-004-durchsetzungsschicht.md) mit
       Aufloesungs-Trigger deklariert
       ([Carveout-Index](../../carveouts/README.md)).
@@ -46,7 +46,7 @@ Konventionsspeicher, Carveout-Register und ADR-Index anlegen.
 | `AGENTS.md` | neu | Agent-Briefing (Template-Adoption) |
 | `harness/README.md`, `harness/conventions.md` | neu | Harness-Einstieg und Konventionsspeicher |
 | `docs/plan/adr/README.md`, `docs/plan/adr/0002-harness-bootstrap.md` | neu | ADR-Index und Adoptions-Entscheidung |
-| `docs/plan/carveouts/` | neu | Index plus [CO-001](../../carveouts/CO-001-spezifikation-stratum.md) bis [CO-004](../../carveouts/CO-004-durchsetzungsschicht.md) |
+| `docs/plan/carveouts/` | neu | Index plus [CO-001](../../carveouts/done/CO-001-spezifikation-stratum.md) bis [CO-004](../../carveouts/CO-004-durchsetzungsschicht.md) |
 | `docs/reviews/README.md` | neu | Review-Ablage |
 | `README.md` | update | Doku-Verweise und Struktur |
 
@@ -84,7 +84,7 @@ DoD vollstaendig, `make gates` gruen, Commit mit Kennungs-Referenz.
   Template-Pfade stehen im Regelwerk selbst.
 - Folgearbeiten: keine neuen `open/`-Eintraege; alle bekannten
   Luecken sind als
-  [CO-001](../../carveouts/CO-001-spezifikation-stratum.md) bis
+  [CO-001](../../carveouts/done/CO-001-spezifikation-stratum.md) bis
   [CO-004](../../carveouts/CO-004-durchsetzungsschicht.md) erfasst.
 
 ## 8. Sub-Area-Modus-Begruendung

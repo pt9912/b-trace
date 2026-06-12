@@ -38,7 +38,7 @@ oder Start von M1.
 **Trigger:** Erste Abwaerts-Referenz aus einem Spec-Stratum auf ADRs
 oder Planning-Artefakte wird im Review gefunden, oder Anlage von
 `spec/spezifikation.md` (Aufloesung
-[CO-001](../../carveouts/CO-001-spezifikation-stratum.md)).
+[CO-001](../../carveouts/done/CO-001-spezifikation-stratum.md)).
 
 **Scope-Skizze:**
 

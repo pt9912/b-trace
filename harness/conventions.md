@@ -79,7 +79,7 @@ Form-Fragen, nicht autoritativ ueber Inhalt.
   noch keine technischen Festlegungen, die ein eigenes Stratum
   rechtfertigen.
 - **Aufloesungs-Trigger:** Aufloesung von
-  [CO-001](../docs/plan/carveouts/CO-001-spezifikation-stratum.md).
+  [CO-001](../docs/plan/carveouts/done/CO-001-spezifikation-stratum.md).
 
 ### MR-003 — Planning-Lifecycle ohne `next/`-Stufe
 
@@ -127,7 +127,7 @@ Form-Fragen, nicht autoritativ ueber Inhalt.
   die Source Precedence traegt alle drei Spec-Straten.
 - **Begruendung:** Nutzerauftrag zur Anlage des
   Spezifikations-Stratums; Aufloesung von
-  [CO-001](../docs/plan/carveouts/CO-001-spezifikation-stratum.md)
+  [CO-001](../docs/plan/carveouts/done/CO-001-spezifikation-stratum.md)
   ([slice-004](../docs/plan/planning/done/slice-004-spezifikation-stratum.md)).
 - **Aufloesungs-Trigger:** permanent.
 

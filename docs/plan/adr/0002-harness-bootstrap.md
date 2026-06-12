@@ -77,7 +77,7 @@ ausschliesslich als Carveout (`CO-*`) mit Aufloesungs-Trigger.
 
 - Positiv: Agentenarbeit beginnt bei `AGENTS.md` und folgt einem
   pruefbaren Workflow; die Luecken des Harness sind als
-  [CO-001](../carveouts/CO-001-spezifikation-stratum.md) bis
+  [CO-001](../carveouts/done/CO-001-spezifikation-stratum.md) bis
   [CO-004](../carveouts/CO-004-durchsetzungsschicht.md) explizit
   statt implizit.
 - Negativ: zusaetzliche Pflegepflicht — Sensor-Deklarationen,

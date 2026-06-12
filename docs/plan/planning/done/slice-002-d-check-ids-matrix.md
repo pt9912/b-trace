@@ -59,7 +59,7 @@ DoD vollstaendig, `make gates` gruen, Commit mit Kennungs-Referenz.
 - Lastenheft-Kennungen (`M-`, `AB-`, `F-*`, ...) haben bewusst noch
   keine Linkpflicht; das wuerde grosse Teile der Roadmap-Tabellen
   betreffen und folgt sinnvoll erst mit dem Spezifikations-Stratum
-  ([CO-001](../../carveouts/CO-001-spezifikation-stratum.md)).
+  ([CO-001](../../carveouts/done/CO-001-spezifikation-stratum.md)).
 - Das `codepaths`-Modul (Pfade in Inline-Code) bleibt aus; Kandidat
   fuer einen spaeteren Ausbau, braucht `d-check:ignore`-Disziplin
   fuer absichtlich noch nicht existierende Pfade.
