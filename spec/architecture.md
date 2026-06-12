@@ -3,21 +3,23 @@
 **Projektname:** b-trace  
 **System:** Incident- & Replay-System (IRS)  
 **Dokumenttyp:** Architekturbeschreibung  
-**Version:** 0.1.0  
+**Version:** 0.2.0  
 **Status:** Entwurf  
-**Bezug:** [Lastenheft](lastenheft.md)
+**Bezug:** [Lastenheft](lastenheft.md), [Spezifikation](spezifikation.md)
 
 ---
 
 ## 1. Zweck
 
-Dieses Dokument beschreibt die technische Zielarchitektur von `b-trace`.
-Es uebersetzt das Lastenheft in Schichten, Komponenten, Ports, Adapter,
-Datenfluesse und Betriebsgrenzen.
+Dieses Dokument zeigt die Zielarchitektur von `b-trace` als
+Komponenten- und Sequenzsicht: Schichten, Ports, Adapter und
+Verantwortungsgrenzen.
 
-Das Dokument ergaenzt das Lastenheft. Anforderungen bleiben im
-Lastenheft normativ; Architekturentscheidungen und technische
-Leitplanken werden hier nachvollziehbar gemacht.
+Es traegt keine eigenen Anforderungen: Anforderungen bleiben im
+[Lastenheft](lastenheft.md) normativ, technisch verbindliche
+Festlegungen (Algorithmen, Defaults, Protokolle) liegen in der
+[Spezifikation](spezifikation.md), Entscheidungs-Begruendungen in den
+Architecture Decision Records.
 
 ---
 
@@ -31,7 +33,7 @@ Leitplanken werden hier nachvollziehbar gemacht.
 | AR-P-004 | Produktive Replays sind standardmäßig blockiert, bis Whitelist und Freigabe greifen | [Q-SEC-005](lastenheft.md) |
 | AR-P-005 | Datenschutz und Maskierung liegen vor Persistenz und Replay-Auswertung | [F-DAT-001..007](lastenheft.md) |
 | AR-P-006 | Observability ist Bestandteil jedes fachlichen Workflows | [F-OBS-001..005](lastenheft.md) |
-| AR-P-007 | Infrastruktur bleibt austauschbar über Adapter | [Q-MNT-004](lastenheft.md), NFQ-005 |
+| AR-P-007 | Infrastruktur bleibt austauschbar über Adapter | [Q-MNT-004](lastenheft.md) |
 
 ---
 
@@ -151,36 +153,18 @@ Konkrete Adapter implementieren diese Ports und bleiben austauschbar.
 
 ---
 
-## 6. Datenfluss: Request-Aufzeichnung
+## 6. Datenfluesse
 
-```text
-HTTP Request/Response
-→ Correlation-ID prüfen oder erzeugen
-→ Header und Payload klassifizieren
-→ Secrets und personenbezogene Daten maskieren
-→ Request/Response persistieren
-→ Event `request.recorded` publizieren
-→ Trace, Metriken und Audit-Einträge erzeugen
-```
+Die verbindlichen Ablaeufe fuer Request-Aufzeichnung und Replay —
+inklusive Pruefreihenfolge des Replay-Gates — sind in der
+[Spezifikation](spezifikation.md) festgelegt. Architektonisch laufen
+beide Ablaeufe vollstaendig durch den Application-Kern: Driving
+Adapter loesen sie aus, Driven Adapter fuehren Persistenz, Events,
+Zielsystem-Aufrufe und Telemetrie aus.
 
 ---
 
-## 7. Datenfluss: Replay
-
-```text
-Replay-Antrag
-→ Rollen und Berechtigungen prüfen
-→ Zielsystem gegen Whitelist prüfen
-→ Payload-Mutation validieren
-→ produktive Freigabe prüfen
-→ Dry-Run oder Replay ausführen
-→ Original- und Zielantwort vergleichbar speichern
-→ Audit, Event und Observability-Daten erzeugen
-```
-
----
-
-## 8. Modulvorschlag
+## 7. Modulvorschlag
 
 ```text
 b-trace/
@@ -211,35 +195,29 @@ bleiben verbindlich.
 
 ---
 
-## 9. Persistenz
+## 8. Persistenz und Events
 
-PostgreSQL ist der erste Zielpfad für persistente Daten. Audit-Daten
-muessen manipulationsresistent und append-orientiert behandelt werden.
-Aufbewahrungsregeln muessen Datenklassen unterscheiden: Request,
-Response, Replay, Incident, Event und Audit.
-
----
-
-## 10. Events
-
-Kafka ist die bevorzugte Event-Infrastruktur. Events muessen mindestens
-Event-ID, Schema-Version, Zeitstempel, Correlation-ID und fachlichen
-Objektbezug enthalten.
+Persistenz laeuft ueber Repository-Ports gegen PostgreSQL, Events
+ueber `IEventPublisher` gegen Kafka (Technologie-Festlegungen und
+verbindliche Event-Pflichtfelder, Datenklassen- und Audit-Regeln:
+[Spezifikation](spezifikation.md)). Der Audit-Log-Adapter ist
+append-only angebunden; kein anderer Adapter schreibt in den
+Audit-Pfad.
 
 ---
 
-## 11. Sicherheit
+## 9. Sicherheit
 
-- JWT/OIDC fuer API-Zugriffe.
-- Rollenbasierte Rechte fuer Payload-Zugriff, Replay und Administration.
-- Produktive Replays nur mit Whitelist und Freigabe.
-- TLS fuer externe Schnittstellen.
-- Maskierung vor Persistenz.
-- Auditierung aller sicherheits-, replay- und payloadbezogenen Aktionen.
+Die Sicherheitsanforderungen sind im [Lastenheft](lastenheft.md)
+normiert (Q-SEC- und ROLE-Familien), die Identitaets- und
+Zugriffstechnik ist in der [Spezifikation](spezifikation.md)
+festgelegt. Architektonisch gilt: Authentifizierung und Autorisierung
+liegen im API-Layer, Maskierungs- und Freigaberegeln im Domain-Kern
+(AR-P-003 bis AR-P-005) — kein Adapter kann sie umgehen.
 
 ---
 
-## 12. Offene Architekturpunkte
+## 10. Offene Architekturpunkte
 
 | Kennung | Frage | Status |
 | ------- | ----- | ------ |
@@ -253,7 +231,7 @@ Objektbezug enthalten.
 
 ---
 
-## 13. Zusammenfassung
+## 11. Zusammenfassung
 
 `b-trace` wird als hexagonales Incident- und Replay-System konzipiert.
 Der fachliche Kern verwaltet Aufzeichnung, Incident, Replay,

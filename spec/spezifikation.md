@@ -35,18 +35,70 @@ Aus dem Lastenheft uebernommene, technisch verbindliche Festlegungen.
 
 ## 2. Algorithmen und Datenfluesse
 
-Noch keine Verfeinerungen. Verfeinerungen einzelner
-Lastenheft-Anforderungen erhalten Kennungen nach dem Schema
-`<Lastenheft-ID>.<buchstabe>` (z. B. `F-REP-006.a`) und entstehen mit
-den ersten Umsetzungsslices.
+Verfeinerungen einzelner Lastenheft-Anforderungen erhalten Kennungen
+nach dem Schema `<Lastenheft-ID>.<buchstabe>` (z. B. `F-REP-006.a`).
+
+### Ablauf Request-Aufzeichnung
+
+**Bezug:** [M-002](lastenheft.md), [F-DAT-001](lastenheft.md)
+
+```text
+HTTP Request/Response
+→ Correlation-ID pruefen oder erzeugen
+→ Header und Payload klassifizieren
+→ Secrets und personenbezogene Daten maskieren
+→ Request/Response persistieren
+→ Event `request.recorded` publizieren
+→ Trace, Metriken und Audit-Eintraege erzeugen
+```
+
+Die Maskierung liegt verbindlich **vor** der Persistierung.
+
+### Ablauf Replay
+
+**Bezug:** [M-003](lastenheft.md), [F-REP-006..012](lastenheft.md)
+
+```text
+Replay-Antrag
+→ Rollen und Berechtigungen pruefen
+→ Zielsystem gegen Whitelist pruefen
+→ Payload-Mutation validieren
+→ produktive Freigabe pruefen
+→ Dry-Run oder Replay ausfuehren
+→ Original- und Zielantwort vergleichbar speichern
+→ Audit, Event und Observability-Daten erzeugen
+```
+
+Die Pruefreihenfolge ist verbindlich; jeder abgelehnte Schritt
+erzeugt einen Audit-Eintrag mit Ablehnungsgrund
+([AB-004](lastenheft.md)).
 
 ---
 
 ## 3. Datenstrukturen und Schemas
 
-Noch keine Festlegungen. OpenAPI-Vertraege und Event-Schemata
-entstehen mit der REST-API-Basis und der Event-Verarbeitung; die
-Schema-Versionierung folgt [AB-014](lastenheft.md).
+OpenAPI-Vertraege entstehen mit der REST-API-Basis.
+
+### Event-Pflichtfelder
+
+Jedes fachliche Event traegt mindestens
+([M-009](lastenheft.md), [AB-014](lastenheft.md)):
+
+| Feld | Zweck |
+| ---- | ----- |
+| Event-ID | eindeutige Identifikation |
+| Schema-Version | Versionierung des Event-Schemas |
+| Zeitstempel | fachlicher Ereigniszeitpunkt |
+| Correlation-ID | Verknuepfung ueber Systemgrenzen |
+| fachlicher Objektbezug | referenziertes Request-, Incident- oder Replay-Objekt |
+
+### Persistenz-Datenklassen
+
+Aufbewahrungs- und Loeschregeln unterscheiden die Datenklassen
+Request, Response, Replay, Incident, Event und Audit
+([F-DAT-002..003](lastenheft.md)). Audit-Daten werden append-only
+gespeichert und muessen manipulationsresistent behandelt werden
+([M-004](lastenheft.md), [AB-004](lastenheft.md)).
 
 ---
 
@@ -84,3 +136,4 @@ Observability-Integration ([F-OBS-001..005](lastenheft.md)).
 | Datum | Aenderung | ADR |
 | ----- | --------- | --- |
 | 2026-06-12 | Initial: Skelett nach Template, Technologie-Festlegungen aus dem Lastenheft uebernommen | — |
+| 2026-06-12 | Datenfluesse, Event-Pflichtfelder und Persistenz-Datenklassen aus der Architektur uebernommen (Stratifizierungs-Aufraeumen) | — |
