@@ -45,14 +45,14 @@ Tests und ADRs.
 
 | Kennung | Liefergegenstand | Bezug |
 | ------- | ---------------- | ----- |
-| RM-M1-01 | Projekt- und Modulstruktur nach hexagonalem Schnitt | AR-P-001, Q-MNT-001 |
+| RM-M1-01 | Projekt- und Modulstruktur nach hexagonalem Schnitt | [AR-P-001](../../../../spec/architecture.md), [Q-MNT-001](../../../../spec/lastenheft.md) |
 | RM-M1-02 | Domain-Modell fuer Request, Response, Incident, Replay und Audit | F-REQ-*, F-INC-*, F-REP-* |
-| RM-M1-03 | REST-API-Basis mit OpenAPI und Health-Endpunkt | M-006, AB-013 |
-| RM-M1-04 | Persistenzadapter fuer PostgreSQL | D-001..010 |
-| RM-M1-05 | Maskierung sensibler Header und Payload-Felder | F-DAT-001, AB-006 |
-| RM-M1-06 | Audit-Logging fuer schreibende und sicherheitsrelevante Aktionen | AB-004 |
-| RM-M1-07 | Einzel-Replay gegen freigegebenes Testziel | AB-001 |
-| RM-M1-08 | Replay-Schutz: Whitelist, Dry-Run, Freigabe, Rate-Limit-Basis | AB-002, AB-003 |
+| RM-M1-03 | REST-API-Basis mit OpenAPI und Health-Endpunkt | [M-006](../../../../spec/lastenheft.md), [AB-013](../../../../spec/lastenheft.md) |
+| RM-M1-04 | Persistenzadapter fuer PostgreSQL | [D-001..010](../../../../spec/lastenheft.md) |
+| RM-M1-05 | Maskierung sensibler Header und Payload-Felder | [F-DAT-001](../../../../spec/lastenheft.md), [AB-006](../../../../spec/lastenheft.md) |
+| RM-M1-06 | Audit-Logging fuer schreibende und sicherheitsrelevante Aktionen | [AB-004](../../../../spec/lastenheft.md) |
+| RM-M1-07 | Einzel-Replay gegen freigegebenes Testziel | [AB-001](../../../../spec/lastenheft.md) |
+| RM-M1-08 | Replay-Schutz: Whitelist, Dry-Run, Freigabe, Rate-Limit-Basis | [AB-002](../../../../spec/lastenheft.md), [AB-003](../../../../spec/lastenheft.md) |
 | RM-M1-09 | Basistests, Architekturtests und CI-Qualitaets-Gates | Kapitel 15/16 |
 
 ### Abnahmekriterien
@@ -74,11 +74,11 @@ Tests und ADRs.
 
 | Kennung | Liefergegenstand | Bezug |
 | ------- | ---------------- | ----- |
-| RM-M2-01 | Kafka-Event-Publisher und Consumer-Basis | M-009, IF-002 |
-| RM-M2-02 | Event-Schema-Versionierung | AB-014 |
-| RM-M2-03 | Retry- und Dead-Letter-Verarbeitung | M-010, AB-009 |
-| RM-M2-04 | OpenTelemetry-Traces fuer Aufzeichnung, Incident und Replay | AB-007 |
-| RM-M2-05 | Metriken fuer Durchsatz, Fehler, Replay-Latenz und DLQ | F-OBS-002 |
+| RM-M2-01 | Kafka-Event-Publisher und Consumer-Basis | [M-009](../../../../spec/lastenheft.md), [IF-002](../../../../spec/lastenheft.md) |
+| RM-M2-02 | Event-Schema-Versionierung | [AB-014](../../../../spec/lastenheft.md) |
+| RM-M2-03 | Retry- und Dead-Letter-Verarbeitung | [M-010](../../../../spec/lastenheft.md), [AB-009](../../../../spec/lastenheft.md) |
+| RM-M2-04 | OpenTelemetry-Traces fuer Aufzeichnung, Incident und Replay | [AB-007](../../../../spec/lastenheft.md) |
+| RM-M2-05 | Metriken fuer Durchsatz, Fehler, Replay-Latenz und DLQ | [F-OBS-002](../../../../spec/lastenheft.md) |
 
 ---
 
@@ -90,11 +90,11 @@ Tests und ADRs.
 
 | Kennung | Liefergegenstand | Bezug |
 | ------- | ---------------- | ----- |
-| RM-M3-01 | OIDC/JWT-Integration mit Keycloak-Profil | F-SEC-001..003 |
-| RM-M3-02 | Rollenmodell Viewer, Analyst, Replayer, Administrator, Auditor | ROLE-001..005 |
-| RM-M3-03 | Roh-Payload-Sonderrecht und Auditierung | F-DAT-005 |
-| RM-M3-04 | Aufbewahrungs- und Loeschregeln | F-DAT-002..003 |
-| RM-M3-05 | Datenschutzexport und Loeschanfrage | F-DAT-006 |
+| RM-M3-01 | OIDC/JWT-Integration mit Keycloak-Profil | [F-SEC-001..003](../../../../spec/lastenheft.md) |
+| RM-M3-02 | Rollenmodell Viewer, Analyst, Replayer, Administrator, Auditor | [ROLE-001..005](../../../../spec/lastenheft.md) |
+| RM-M3-03 | Roh-Payload-Sonderrecht und Auditierung | [F-DAT-005](../../../../spec/lastenheft.md) |
+| RM-M3-04 | Aufbewahrungs- und Loeschregeln | [F-DAT-002..003](../../../../spec/lastenheft.md) |
+| RM-M3-05 | Datenschutzexport und Loeschanfrage | [F-DAT-006](../../../../spec/lastenheft.md) |
 
 ---
 
@@ -106,10 +106,10 @@ Tests und ADRs.
 
 | Kennung | Liefergegenstand | Bezug |
 | ------- | ---------------- | ----- |
-| RM-M4-01 | Batch-Replay mit Parallelitaet und Drosselung | F-REP-004, F-REP-009 |
-| RM-M4-02 | Vergleich Originalantwort vs. Replayantwort | F-REP-011 |
-| RM-M4-03 | Zeitversetztes Replay | F-REP-005 |
-| RM-M4-04 | Exportierbare Incident- und Replay-Reports | W-005 |
+| RM-M4-01 | Batch-Replay mit Parallelitaet und Drosselung | [F-REP-004](../../../../spec/lastenheft.md), [F-REP-009](../../../../spec/lastenheft.md) |
+| RM-M4-02 | Vergleich Originalantwort vs. Replayantwort | [F-REP-011](../../../../spec/lastenheft.md) |
+| RM-M4-03 | Zeitversetztes Replay | [F-REP-005](../../../../spec/lastenheft.md) |
+| RM-M4-04 | Exportierbare Incident- und Replay-Reports | [W-005](../../../../spec/lastenheft.md) |
 
 ---
 
@@ -121,10 +121,10 @@ Tests und ADRs.
 
 | Kennung | Liefergegenstand | Bezug |
 | ------- | ---------------- | ----- |
-| RM-M5-01 | Docker-Compose-Referenzumgebung | AB-008 |
-| RM-M5-02 | Performance-Tests fuer 1000 Requests/s und Replay p95 | AB-010 |
-| RM-M5-03 | Kubernetes-faehiges Deployment | DEP-002 |
-| RM-M5-04 | Rollback- und Zero-Downtime-Konzept | DEP-003..005 |
+| RM-M5-01 | Docker-Compose-Referenzumgebung | [AB-008](../../../../spec/lastenheft.md) |
+| RM-M5-02 | Performance-Tests fuer 1000 Requests/s und Replay p95 | [AB-010](../../../../spec/lastenheft.md) |
+| RM-M5-03 | Kubernetes-faehiges Deployment | [DEP-002](../../../../spec/lastenheft.md) |
+| RM-M5-04 | Rollback- und Zero-Downtime-Konzept | [DEP-003..005](../../../../spec/lastenheft.md) |
 
 ---
 
