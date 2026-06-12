@@ -6,7 +6,7 @@
 
 **Bezug:** [ADR-0002](../../adr/0002-harness-bootstrap.md),
 [CO-003](../../carveouts/CO-003-traceability-mechanik.md),
-[MR-005](../../../../harness/conventions.md),
+[MR-005](../../../../harness/conventions.md#mr-005--aufhebung-von-mr-003-next-stufe-eingefuehrt),
 [Trigger-Watch-Notiz](note-d-check-ausbau.md)
 
 **Autor:** Dietmar Burkard. **Datum:** 2026-06-12.
@@ -29,8 +29,8 @@ der bestehenden Doku aufloesen.
 - [x] Sensors-Tabelle in [harness/README.md](../../../../harness/README.md)
       nachgefuehrt (Konvergenz-Auftrag der BF-Sub-Area Tooling).
 - [x] `docs/plan/planning/next/` angelegt;
-      [MR-005](../../../../harness/conventions.md) hebt
-      [MR-003](../../../../harness/conventions.md) auf.
+      [MR-005](../../../../harness/conventions.md#mr-005--aufhebung-von-mr-003-next-stufe-eingefuehrt) hebt
+      [MR-003](../../../../harness/conventions.md#mr-003--planning-lifecycle-ohne-next-stufe) auf.
 - [x] Trigger-Watch-Notiz nach `done/` ueberfuehrt (reiner Move,
       dann Status-Update).
 - [x] `make gates` gruen.
@@ -42,7 +42,7 @@ der bestehenden Doku aufloesen.
 | `.d-check.yml` | update | Module ids und matrix aktivieren |
 | Harness-, ADR-, Carveout-, Planning-Dateien | update | Kennungen verlinken (Befund-getrieben) |
 | `docs/plan/planning/next/` | neu | Baseline-Lifecycle vervollstaendigen |
-| `harness/conventions.md` | update | [MR-005](../../../../harness/conventions.md) (Aufhebung von [MR-003](../../../../harness/conventions.md)) |
+| `harness/conventions.md` | update | [MR-005](../../../../harness/conventions.md#mr-005--aufhebung-von-mr-003-next-stufe-eingefuehrt) (Aufhebung von [MR-003](../../../../harness/conventions.md#mr-003--planning-lifecycle-ohne-next-stufe)) |
 
 ## 4. Trigger
 

@@ -48,9 +48,9 @@ make docker-docs-check
 
 | Kennung | Ziel |
 | ------- | ---- |
-| [COV-001](../../spec/lastenheft.md) | Line Coverage mindestens 90% |
-| [COV-002](../../spec/lastenheft.md) | Branch Coverage mindestens 85% |
-| [COV-003](../../spec/lastenheft.md) | Kritische Domain- und Replay-Policy mindestens 95% |
+| [COV-001](../../spec/lastenheft.md#153-coverage-anforderungen) | Line Coverage mindestens 90% |
+| [COV-002](../../spec/lastenheft.md#153-coverage-anforderungen) | Branch Coverage mindestens 85% |
+| [COV-003](../../spec/lastenheft.md#153-coverage-anforderungen) | Kritische Domain- und Replay-Policy mindestens 95% |
 
 Coverage darf nicht durch Getter-/Setter-Tests oder künstliche
 Testpfade erzeugt werden.

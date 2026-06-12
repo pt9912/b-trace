@@ -105,7 +105,7 @@ werden erst behauptet, wenn sie real laufen.
 - Kennungen muessen in Commits/PRs referenziert sein. Vergeben werden
   sie beim Spec-/ADR-Schreiben nach dem in
   [harness/conventions.md](harness/conventions.md)
-  ([MR-001](harness/conventions.md)) deklarierten Schema — nie ad hoc
+  ([MR-001](harness/conventions.md#mr-001--id-schema-des-bestehenden-lastenhefts)) deklarierten Schema — nie ad hoc
   im PR.
 - Neue ADRs muessen den [ADR-Index](docs/plan/adr/README.md)
   aktualisieren.

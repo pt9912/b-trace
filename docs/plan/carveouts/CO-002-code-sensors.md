@@ -10,7 +10,7 @@ Test-, Architektur- und Coverage-Gates fehlen)
 **Geltungsbereich:** gesamtes Repo (es existiert kein Code)
 
 **Folge-Slice:** — entsteht beim Zuenden des Triggers (Bezug:
-[RM-M1-01](../planning/in-progress/roadmap.md), [RM-M1-09](../planning/in-progress/roadmap.md))
+[RM-M1-01](../planning/in-progress/roadmap.md#m1--mvp-aufzeichnung-audit-und-sicheres-einzel-replay), [RM-M1-09](../planning/in-progress/roadmap.md#m1--mvp-aufzeichnung-audit-und-sicheres-einzel-replay))
 
 ---
 
@@ -18,15 +18,15 @@ Test-, Architektur- und Coverage-Gates fehlen)
 
 Bootstrap: Es existiert kein Gradle-Build, also gibt es nichts, woran
 Build-, Test-, Architektur- oder Coverage-Gates pruefbar waeren. Die
-Coverage-Ziele [COV-001](../../../spec/lastenheft.md) bis
-[COV-003](../../../spec/lastenheft.md) und die Architektur-Gates aus dem
+Coverage-Ziele [COV-001](../../../spec/lastenheft.md#153-coverage-anforderungen) bis
+[COV-003](../../../spec/lastenheft.md#153-coverage-anforderungen) und die Architektur-Gates aus dem
 Lastenheft sind damit deklariert, aber noch nicht durchgesetzt.
 
 ## Aufloesungs-Trigger
 
-[RM-M1-01](../planning/in-progress/roadmap.md) (Projekt- und Modulstruktur): Mit dem ersten Build werden
+[RM-M1-01](../planning/in-progress/roadmap.md#m1--mvp-aufzeichnung-audit-und-sicheres-einzel-replay) (Projekt- und Modulstruktur): Mit dem ersten Build werden
 Gradle check, Architekturtests und Coverage-Gates an `make gates`
-gebunden ([RM-M1-09](../planning/in-progress/roadmap.md)) und in der Sensors-Tabelle in
+gebunden ([RM-M1-09](../planning/in-progress/roadmap.md#m1--mvp-aufzeichnung-audit-und-sicheres-einzel-replay)) und in der Sensors-Tabelle in
 `harness/README.md` deklariert.
 
 ## Geltungs-Konfiguration

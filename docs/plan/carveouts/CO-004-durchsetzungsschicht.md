@@ -19,7 +19,7 @@ Middlewares) ist nicht angelegt
 Es gibt noch keine Agent-Schleife mit Implementierungs-Slices, an die
 ein Tool-Call- oder Handoff-Gate gebunden werden koennte. Einziger
 Bindepunkt ist das Workflow-Skelett in `harness/README.md` — der
-schwaechste der drei Bindepunkte ([MR-004](../../../harness/conventions.md)).
+schwaechste der drei Bindepunkte ([MR-004](../../../harness/conventions.md#mr-004--keine-harness-mechanik)).
 
 ## Aufloesungs-Trigger
 
@@ -30,7 +30,7 @@ wird (fruehestens M1-Start).
 
 | Datei | Zeile/Section | Wert |
 | ----- | ------------- | ---- |
-| `harness/conventions.md` | [MR-004](../../../harness/conventions.md) | Adaption deklariert |
+| `harness/conventions.md` | [MR-004](../../../harness/conventions.md#mr-004--keine-harness-mechanik) | Adaption deklariert |
 
 ## Verifikation (nach Aufloesung)
 
@@ -38,7 +38,7 @@ wird (fruehestens M1-Start).
       (Skill, Allowlist oder Middleware) existiert.
 - [ ] Handoff-Gate prueft, dass `make gates` vor der Fertig-Meldung
       lief.
-- [ ] [MR-004](../../../harness/conventions.md) per neuem `MR`-Eintrag aufgehoben.
+- [ ] [MR-004](../../../harness/conventions.md#mr-004--keine-harness-mechanik) per neuem `MR`-Eintrag aufgehoben.
 - [ ] Datei nach `docs/plan/carveouts/done/` bewegt (reiner `git mv`).
 
 ## Geschichte

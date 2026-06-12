@@ -50,7 +50,7 @@ hoehere. ADRs duerfen die Spezifikation schaerfen, nie das Lastenheft.
 Nur Make-Targets, die real existieren und ohne Gradle-Build laufen.
 Lauf-Wahrheit liegt lokal bei `make gates`; eine CI-Plattform ist noch
 nicht entschieden
-([RM-OPEN-006](../docs/plan/planning/in-progress/roadmap.md)).
+([RM-OPEN-006](../docs/plan/planning/in-progress/roadmap.md#offene-roadmap-punkte)).
 
 | Target | Vertrag | Bindung |
 | ------ | ------- | ------- |
@@ -63,7 +63,7 @@ nicht entschieden
 — Bindung entsteht mit der Aufloesung von
 [CO-002](../docs/plan/carveouts/CO-002-code-sensors.md).
 **Nicht vorhanden** (geplant): Lint-, Architektur- und Coverage-Gates
-([RM-M1-09](../docs/plan/planning/in-progress/roadmap.md),
+([RM-M1-09](../docs/plan/planning/in-progress/roadmap.md#m1--mvp-aufzeichnung-audit-und-sicheres-einzel-replay),
 [CO-002](../docs/plan/carveouts/CO-002-code-sensors.md)).
 
 ## Traceability rules
@@ -71,13 +71,13 @@ nicht entschieden
 - Commits und PRs muessen mindestens eine Kennung nennen:
   Lastenheft-ID, Roadmap-ID (`RM-*`), ADR-Nummer oder Carveout
   (`CO-*`). Das ID-Schema ist in [conventions.md](conventions.md)
-  ([MR-001](conventions.md)) deklariert.
+  ([MR-001](conventions.md#mr-001--id-schema-des-bestehenden-lastenhefts)) deklariert.
 - Neue oder geaenderte Anforderungen brauchen einen Beleg: Test, Gate,
   Demo oder ADR.
 - Neue ADRs muessen im [ADR-Index](../docs/plan/adr/README.md)
   ergaenzt werden.
 - Planning-Dokumente folgen dem Lifecycle open → next → in-progress
-  → done ([MR-005](conventions.md) hebt [MR-003](conventions.md)
+  → done ([MR-005](conventions.md#mr-005--aufhebung-von-mr-003-next-stufe-eingefuehrt) hebt [MR-003](conventions.md#mr-003--planning-lifecycle-ohne-next-stufe)
   auf); reine Verschiebungen als eigener `git mv`-Commit (AGENTS.md,
   Hard Rules).
 - Die Doku-Seite (Linkpflicht fuer Kennungen) prueft das ids-Modul
@@ -95,8 +95,8 @@ nicht entschieden
   Change Request mit Eintrag in der Aenderungshistorie.
 - Offene Roadmap-Entscheidungen (`RM-OPEN-xxx`) werden nicht implizit
   getroffen, sondern per ADR geschlossen.
-- Abgrenzungen [A-001](../spec/lastenheft.md) bis
-  [A-004](../spec/lastenheft.md) aus dem Lastenheft gelten: kein SIEM,
+- Abgrenzungen [A-001](../spec/lastenheft.md#13-abgrenzungskriterien) bis
+  [A-004](../spec/lastenheft.md#13-abgrenzungskriterien) aus dem Lastenheft gelten: kein SIEM,
   kein Ticket-System, keine BPM-Engine, keine Legacy-Monolithen.
 
 ## Minimal agent workflow

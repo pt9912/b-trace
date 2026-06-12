@@ -5,9 +5,9 @@
 **Welle:** ohne Welle (Spec-Pflege)
 
 **Bezug:** [slice-004](slice-004-spezifikation-stratum.md),
-[AR-P-003](../../../../spec/architecture.md),
-[M-002](../../../../spec/lastenheft.md),
-[M-003](../../../../spec/lastenheft.md)
+[AR-P-003](../../../../spec/architecture.md#2-architekturprinzipien),
+[M-002](../../../../spec/lastenheft.md#11-muss-ziele),
+[M-003](../../../../spec/lastenheft.md#11-muss-ziele)
 
 **Autor:** Dietmar Burkard. **Datum:** 2026-06-12.
 
@@ -29,7 +29,7 @@ Anforderungen) und die dort gewachsenen normativen Festlegungen in
 - [x] Architektur: Persistenz-, Event- und Sicherheitsabschnitte auf
       Sicht plus Verweis reduziert; keine "muessen"-Saetze mehr.
 - [x] Haengende Referenz `NFQ-005` aus
-      [AR-P-007](../../../../spec/architecture.md) entfernt.
+      [AR-P-007](../../../../spec/architecture.md#2-architekturprinzipien) entfernt.
 - [x] Architektur-Version auf 0.2.0; Zweck-Abschnitt benennt die
       Stratum-Rollen.
 - [x] `make gates` gruen.

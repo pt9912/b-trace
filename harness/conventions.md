@@ -136,6 +136,9 @@ Form-Fragen, nicht autoritativ ueber Inhalt.
 - Dokumentationssprache ist Deutsch; neue Texte in umlautfreier
   Schreibweise (`ue`, `ae`, `oe`, `ss`), Ausnahme: Zitate und
   Eigennamen.
+- Kennungs-Links zeigen auf den Kapitel-Anker der Definition (z. B.
+  `lastenheft.md#71-backend`), nicht nur auf die Datei; das
+  `anchors`-Modul von d-check validiert die Anker.
 - Die leeren Verzeichnisse `.agents/` und `.codex/` sind Altbestand
   ohne Funktion; `AGENTS.md` im Root ist das einzige Agent-Briefing.
 
@@ -154,8 +157,8 @@ Reproduzierbarkeit) gelten ohne Deklaration.
 | ----------------------- | ----- | ----------- | ---------------------------------- |
 | Spezifikation und Planung (`spec/`, `docs/plan/`) | GF | Doku fuehrt; Lastenheft 1.1, Architektur, ADRs und Roadmap existieren vor jedem Code. | n/a (GF) |
 | Anwender-Doku (`docs/user/`) | GF | Doku fuehrt; beschreibt geplantes Verhalten aus dem Lastenheft. | n/a (GF) |
-| Anwendungscode (noch nicht vorhanden) | GF | Phase 0; Code folgt der Doku, erster Slice ist [RM-M1-01](../docs/plan/planning/in-progress/roadmap.md). | n/a (GF) |
-| Build- und Doku-Tooling (`Makefile`, `Dockerfile`, `.d-check.yml`) | BF | Code existierte vor der Harness-Doku; Sensor-Deklaration folgt dem Tooling. | Graduation zu GF, wenn [CO-002](../docs/plan/carveouts/CO-002-code-sensors.md) aufgeloest ist und die Sensors-Tabelle in [README.md](README.md) alle gebundenen Gates traegt ([RM-M1-09](../docs/plan/planning/in-progress/roadmap.md)). Konvergenz-Auftrag: Sensor-Deklaration bei jeder Tooling-Aenderung nachfuehren. |
+| Anwendungscode (noch nicht vorhanden) | GF | Phase 0; Code folgt der Doku, erster Slice ist [RM-M1-01](../docs/plan/planning/in-progress/roadmap.md#m1--mvp-aufzeichnung-audit-und-sicheres-einzel-replay). | n/a (GF) |
+| Build- und Doku-Tooling (`Makefile`, `Dockerfile`, `.d-check.yml`) | BF | Code existierte vor der Harness-Doku; Sensor-Deklaration folgt dem Tooling. | Graduation zu GF, wenn [CO-002](../docs/plan/carveouts/CO-002-code-sensors.md) aufgeloest ist und die Sensors-Tabelle in [README.md](README.md) alle gebundenen Gates traegt ([RM-M1-09](../docs/plan/planning/in-progress/roadmap.md#m1--mvp-aufzeichnung-audit-und-sicheres-einzel-replay)). Konvergenz-Auftrag: Sensor-Deklaration bei jeder Tooling-Aenderung nachfuehren. |
 
 ## Glossar
 

@@ -85,10 +85,10 @@ ausschliesslich als Carveout (`CO-*`) mit Aufloesungs-Trigger.
   sonst entsteht genau die Doku-Drift, die der Harness verhindern
   soll.
 - Folgepflicht: Carveout-Aufloesungen haengen an der Roadmap
-  ([RM-OPEN-001](../planning/in-progress/roadmap.md),
-  [RM-OPEN-002](../planning/in-progress/roadmap.md),
-  [RM-M1-01](../planning/in-progress/roadmap.md),
-  [RM-M1-09](../planning/in-progress/roadmap.md)); ihre Trigger
+  ([RM-OPEN-001](../planning/in-progress/roadmap.md#offene-roadmap-punkte),
+  [RM-OPEN-002](../planning/in-progress/roadmap.md#offene-roadmap-punkte),
+  [RM-M1-01](../planning/in-progress/roadmap.md#m1--mvp-aufzeichnung-audit-und-sicheres-einzel-replay),
+  [RM-M1-09](../planning/in-progress/roadmap.md#m1--mvp-aufzeichnung-audit-und-sicheres-einzel-replay)); ihre Trigger
   werden dort mitverfolgt.
 
 ## Fitness Function

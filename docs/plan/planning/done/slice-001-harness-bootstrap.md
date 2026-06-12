@@ -7,8 +7,8 @@
 **Bezug:** [ADR-0002](../../adr/0002-harness-bootstrap.md),
 [CO-001](../../carveouts/done/CO-001-spezifikation-stratum.md) bis
 [CO-004](../../carveouts/CO-004-durchsetzungsschicht.md),
-[MR-000](../../../../harness/conventions.md) bis
-[MR-004](../../../../harness/conventions.md)
+[MR-000](../../../../harness/conventions.md#mr-000--baseline-aussage) bis
+[MR-004](../../../../harness/conventions.md#mr-004--keine-harness-mechanik)
 
 **Autor:** Dietmar Burkard. **Datum:** 2026-06-12.
 
@@ -33,8 +33,8 @@ Konventionsspeicher, Carveout-Register und ADR-Index anlegen.
       Aufloesungs-Trigger deklariert
       ([Carveout-Index](../../carveouts/README.md)).
 - [x] Abweichungen gegenueber der Baseline sind als
-      [MR-000](../../../../harness/conventions.md) bis
-      [MR-004](../../../../harness/conventions.md) deklariert.
+      [MR-000](../../../../harness/conventions.md#mr-000--baseline-aussage) bis
+      [MR-004](../../../../harness/conventions.md#mr-004--keine-harness-mechanik) deklariert.
 - [x] `docs/reviews/` existiert mit Namenskonvention.
 - [x] Root-README verlinkt die neuen Artefakte.
 - [x] `make gates` gruen.

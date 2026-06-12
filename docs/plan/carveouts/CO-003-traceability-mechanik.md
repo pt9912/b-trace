@@ -17,7 +17,7 @@ CI-Check fuer Kennungs-Referenzen)
 
 Die Traceability-Regel (jede relevante Aenderung referenziert
 mindestens eine Kennung) gilt nur konventionell. Eine CI-Plattform
-ist noch nicht entschieden ([RM-OPEN-006](../planning/in-progress/roadmap.md)), an die ein Hook oder Check
+ist noch nicht entschieden ([RM-OPEN-006](../planning/in-progress/roadmap.md#offene-roadmap-punkte)), an die ein Hook oder Check
 gebunden werden koennte.
 
 ## Aufloesungs-Trigger

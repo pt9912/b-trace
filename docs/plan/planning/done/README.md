@@ -12,5 +12,6 @@ Abgeschlossen:
 - [slice-003: ids-Vollausbau](slice-003-ids-vollausbau.md)
 - [slice-004: Spezifikations-Stratum](slice-004-spezifikation-stratum.md)
 - [slice-005: Spec-Straten aufraeumen](slice-005-spec-straten-aufraeumen.md)
+- [slice-006: Kennungs-Links auf Kapitel-Anker](slice-006-kennungs-anker.md)
 
 Noch kein Code-Umsetzungsslice abgeschlossen.

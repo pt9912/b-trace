@@ -27,13 +27,13 @@ Architecture Decision Records.
 
 | Kennung | Prinzip | Bezug |
 | ------- | ------- | ----- |
-| AR-P-001 | Hexagonale Architektur mit klaren Ports und Adaptern | [ARC-001..003](lastenheft.md) |
-| AR-P-002 | Domäne bleibt frei von Framework-, Datenbank- und Messaging-Abhängigkeiten | [CC-003](lastenheft.md), [ARCHTEST-004](lastenheft.md) |
-| AR-P-003 | Replay ist eine privilegierte, auditpflichtige Operation | [F-REP-006..012](lastenheft.md), [F-SEC-006](lastenheft.md) |
-| AR-P-004 | Produktive Replays sind standardmäßig blockiert, bis Whitelist und Freigabe greifen | [Q-SEC-005](lastenheft.md) |
-| AR-P-005 | Datenschutz und Maskierung liegen vor Persistenz und Replay-Auswertung | [F-DAT-001..007](lastenheft.md) |
-| AR-P-006 | Observability ist Bestandteil jedes fachlichen Workflows | [F-OBS-001..005](lastenheft.md) |
-| AR-P-007 | Infrastruktur bleibt austauschbar über Adapter | [Q-MNT-004](lastenheft.md) |
+| AR-P-001 | Hexagonale Architektur mit klaren Ports und Adaptern | [ARC-001..003](lastenheft.md#81-architekturprinzipien) |
+| AR-P-002 | Domäne bleibt frei von Framework-, Datenbank- und Messaging-Abhängigkeiten | [CC-003](lastenheft.md#142-clean-code-richtlinien), [ARCHTEST-004](lastenheft.md#163-architekturvalidierung) |
+| AR-P-003 | Replay ist eine privilegierte, auditpflichtige Operation | [F-REP-006..012](lastenheft.md#42-replay-funktionen), [F-SEC-006](lastenheft.md#44-sicherheit) |
+| AR-P-004 | Produktive Replays sind standardmäßig blockiert, bis Whitelist und Freigabe greifen | [Q-SEC-005](lastenheft.md#62-sicherheit) |
+| AR-P-005 | Datenschutz und Maskierung liegen vor Persistenz und Replay-Auswertung | [F-DAT-001..007](lastenheft.md#46-datenschutz-und-datenlebenszyklus) |
+| AR-P-006 | Observability ist Bestandteil jedes fachlichen Workflows | [F-OBS-001..005](lastenheft.md#45-observability) |
+| AR-P-007 | Infrastruktur bleibt austauschbar über Adapter | [Q-MNT-004](lastenheft.md#63-wartbarkeit) |
 
 ---
 

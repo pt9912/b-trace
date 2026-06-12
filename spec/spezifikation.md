@@ -15,21 +15,21 @@ Aus dem Lastenheft uebernommene, technisch verbindliche Festlegungen.
 
 | Bereich | Festlegung | Bezug |
 | ------- | ---------- | ----- |
-| Sprache und Plattform | Java 21 | [T-BE-001](lastenheft.md) |
-| API-Stil | RESTful APIs mit OpenAPI-Vertrag | [T-BE-004](lastenheft.md), [T-BE-005](lastenheft.md), [M-006](lastenheft.md) |
-| Persistenz | PostgreSQL | [T-INF-004](lastenheft.md), [IF-004](lastenheft.md) |
-| Messaging | Kafka | [T-INF-005](lastenheft.md), [IF-002](lastenheft.md) |
-| Identitaet und Zugriff | Keycloak (OIDC), JWT-basierte Authentifizierung | [F-SEC-003](lastenheft.md), [IF-005](lastenheft.md), [Q-SEC-002](lastenheft.md) |
-| Observability | OpenTelemetry; Prometheus und Grafana | [T-INF-006](lastenheft.md), [T-INF-007](lastenheft.md), [T-INF-008](lastenheft.md), [IF-003](lastenheft.md), [M-007](lastenheft.md) |
-| Laufzeitumgebung | Docker und Docker Compose; Kubernetes als Soll-Zielplattform | [T-INF-001..003](lastenheft.md), [BB-001](lastenheft.md), [BB-003](lastenheft.md) |
-| Frontend | SvelteKit, responsive, Echtzeitaktualisierung | [T-FE-001..003](lastenheft.md) |
+| Sprache und Plattform | Java 21 | [T-BE-001](lastenheft.md#71-backend) |
+| API-Stil | RESTful APIs mit OpenAPI-Vertrag | [T-BE-004](lastenheft.md#71-backend), [T-BE-005](lastenheft.md#71-backend), [M-006](lastenheft.md#11-muss-ziele) |
+| Persistenz | PostgreSQL | [T-INF-004](lastenheft.md#73-infrastruktur), [IF-004](lastenheft.md#91-externe-schnittstellen) |
+| Messaging | Kafka | [T-INF-005](lastenheft.md#73-infrastruktur), [IF-002](lastenheft.md#91-externe-schnittstellen) |
+| Identitaet und Zugriff | Keycloak (OIDC), JWT-basierte Authentifizierung | [F-SEC-003](lastenheft.md#44-sicherheit), [IF-005](lastenheft.md#91-externe-schnittstellen), [Q-SEC-002](lastenheft.md#62-sicherheit) |
+| Observability | OpenTelemetry; Prometheus und Grafana | [T-INF-006](lastenheft.md#73-infrastruktur), [T-INF-007](lastenheft.md#73-infrastruktur), [T-INF-008](lastenheft.md#73-infrastruktur), [IF-003](lastenheft.md#91-externe-schnittstellen), [M-007](lastenheft.md#11-muss-ziele) |
+| Laufzeitumgebung | Docker und Docker Compose; Kubernetes als Soll-Zielplattform | [T-INF-001..003](lastenheft.md#73-infrastruktur), [BB-001](lastenheft.md#23-betriebsbedingungen), [BB-003](lastenheft.md#23-betriebsbedingungen) |
+| Frontend | SvelteKit, responsive, Echtzeitaktualisierung | [T-FE-001..003](lastenheft.md#72-frontend) |
 
 ### Offene Festlegungen
 
 | Festlegung | Zulaessige Optionen | Bezug |
 | ---------- | ------------------- | ----- |
-| Backend-Framework | Micronaut oder Jakarta EE; Entscheidung im Pflichtenheft | [T-BE-002](lastenheft.md) |
-| Build-System | Gradle oder Maven; Entscheidung im Pflichtenheft | [T-BE-003](lastenheft.md) |
+| Backend-Framework | Micronaut oder Jakarta EE; Entscheidung im Pflichtenheft | [T-BE-002](lastenheft.md#71-backend) |
+| Build-System | Gradle oder Maven; Entscheidung im Pflichtenheft | [T-BE-003](lastenheft.md#71-backend) |
 
 ---
 
@@ -40,7 +40,7 @@ nach dem Schema `<Lastenheft-ID>.<buchstabe>` (z. B. `F-REP-006.a`).
 
 ### Ablauf Request-Aufzeichnung
 
-**Bezug:** [M-002](lastenheft.md), [F-DAT-001](lastenheft.md)
+**Bezug:** [M-002](lastenheft.md#11-muss-ziele), [F-DAT-001](lastenheft.md#46-datenschutz-und-datenlebenszyklus)
 
 ```text
 HTTP Request/Response
@@ -56,7 +56,7 @@ Die Maskierung liegt verbindlich **vor** der Persistierung.
 
 ### Ablauf Replay
 
-**Bezug:** [M-003](lastenheft.md), [F-REP-006..012](lastenheft.md)
+**Bezug:** [M-003](lastenheft.md#11-muss-ziele), [F-REP-006..012](lastenheft.md#42-replay-funktionen)
 
 ```text
 Replay-Antrag
@@ -71,7 +71,7 @@ Replay-Antrag
 
 Die Pruefreihenfolge ist verbindlich; jeder abgelehnte Schritt
 erzeugt einen Audit-Eintrag mit Ablehnungsgrund
-([AB-004](lastenheft.md)).
+([AB-004](lastenheft.md#13-abnahmekriterien)).
 
 ---
 
@@ -82,7 +82,7 @@ OpenAPI-Vertraege entstehen mit der REST-API-Basis.
 ### Event-Pflichtfelder
 
 Jedes fachliche Event traegt mindestens
-([M-009](lastenheft.md), [AB-014](lastenheft.md)):
+([M-009](lastenheft.md#11-muss-ziele), [AB-014](lastenheft.md#13-abnahmekriterien)):
 
 | Feld | Zweck |
 | ---- | ----- |
@@ -96,17 +96,17 @@ Jedes fachliche Event traegt mindestens
 
 Aufbewahrungs- und Loeschregeln unterscheiden die Datenklassen
 Request, Response, Replay, Incident, Event und Audit
-([F-DAT-002..003](lastenheft.md)). Audit-Daten werden append-only
+([F-DAT-002..003](lastenheft.md#46-datenschutz-und-datenlebenszyklus)). Audit-Daten werden append-only
 gespeichert und muessen manipulationsresistent behandelt werden
-([M-004](lastenheft.md), [AB-004](lastenheft.md)).
+([M-004](lastenheft.md#11-muss-ziele), [AB-004](lastenheft.md#13-abnahmekriterien)).
 
 ---
 
 ## 4. Defaults und Konstanten
 
 Noch keine Festlegungen. Kandidaten: Rate-Limit-Defaults
-([F-REP-009](lastenheft.md)), initiale Maskierungsregeln
-([F-DAT-001](lastenheft.md)).
+([F-REP-009](lastenheft.md#42-replay-funktionen)), initiale Maskierungsregeln
+([F-DAT-001](lastenheft.md#46-datenschutz-und-datenlebenszyklus)).
 
 ---
 
@@ -119,7 +119,7 @@ Noch keine Festlegungen.
 ## 6. Metriken und Tracing-Felder
 
 Noch keine Festlegungen. Pflicht-Attribute pro Span entstehen mit der
-Observability-Integration ([F-OBS-001..005](lastenheft.md)).
+Observability-Integration ([F-OBS-001..005](lastenheft.md#45-observability)).
 
 ---
 
@@ -127,7 +127,7 @@ Observability-Integration ([F-OBS-001..005](lastenheft.md)).
 
 | System | Version | Vertrag-Datei |
 | ------ | ------- | ------------- |
-| Replay-Zielsysteme | offen | noch keine; Whitelist-Pflicht nach [F-REP-006..012](lastenheft.md) |
+| Replay-Zielsysteme | offen | noch keine; Whitelist-Pflicht nach [F-REP-006..012](lastenheft.md#42-replay-funktionen) |
 
 ---
 
