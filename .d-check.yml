@@ -1,11 +1,41 @@
 # Doku-Referenz-Checks via d-check (ghcr.io/pt9912/d-check) — ersetzt
 # scripts/verify-doc-refs.sh (Rollout 2026-06-12, Shell-Familie).
 # "." = gesamte Repo-Wurzel (SKIP_DIRS wie .git gelten immer), damit
-# auch harness/ gescannt wird (Harness-Bootstrap, ADR-0002);
-# `anchors` ist Mehr-Abdeckung (das Alt-Tool pruefte nur
-# Link-Existenz). Ausbau auf ids/matrix: siehe
-# docs/plan/planning/open/note-d-check-ausbau.md
+# auch harness/ gescannt wird (Harness-Bootstrap, ADR-0002).
+# Scharf geschaltet am 2026-06-12 (slice-002): ids und matrix.
 # Beschreibung siehe: https://raw.githubusercontent.com/pt9912/d-check/refs/heads/main/README.md
 scan:
   roots: ["."]
-modules: [links, anchors]
+modules: [links, anchors, ids, matrix]
+
+# Linkpflicht fuer Kennungen (F-DC-01): nackte IDs im Fliesstext
+# muessen auf ihre Definition verlinken. Lastenheft-Kennungen (M-,
+# AB-, F-*, ...) bleiben bewusst ohne Linkpflicht, bis das
+# Spezifikations-Stratum existiert (CO-001).
+ids:
+  patterns:
+    - regex: 'ADR-\d{4}'
+      target: docs/plan/adr/
+    - regex: 'CO-\d{3}'
+      target: docs/plan/carveouts/
+    - regex: 'MR-\d{3}'
+      target: harness/conventions.md
+    - regex: 'RM-(M\d|OPEN)-\d+'
+      target: docs/plan/planning/in-progress/roadmap.md
+    - regex: 'slice-\d{3}'
+      target: docs/plan/planning/
+
+# Referenzmatrix (F-DC-02): Spec-Straten verweisen nie abwaerts auf
+# ADRs oder Planning-Artefakte (Stable Dependencies Principle der
+# Baseline).
+matrix:
+  classes:
+    - name: spec-straten
+      paths: [spec/lastenheft.md, spec/architecture.md]
+    - name: adr
+      paths: ["docs/plan/adr/[0-9]*.md"]
+    - name: slice
+      paths: ["docs/plan/planning/**/slice-*.md"]
+  rules:
+    - {from: spec-straten, to: adr, allow: false}
+    - {from: spec-straten, to: slice, allow: false}

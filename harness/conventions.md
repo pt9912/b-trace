@@ -48,7 +48,8 @@ Form-Fragen, nicht autoritativ ueber Inhalt.
   Baseline-Default fuer Verzeichniskonvention, Lifecycle-Regeln und
   Carveout-Disziplin — ausser den nachfolgend deklarierten
   `MR`-Eintraegen.
-- **Begruendung:** Initial-Setzung beim Harness-Bootstrap (ADR-0002).
+- **Begruendung:** Initial-Setzung beim Harness-Bootstrap
+  ([ADR-0002](../docs/plan/adr/0002-harness-bootstrap.md)).
 - **Aufloesungs-Trigger:** permanent.
 
 ### MR-001 — ID-Schema des bestehenden Lastenhefts
@@ -106,6 +107,18 @@ Form-Fragen, nicht autoritativ ueber Inhalt.
 - **Aufloesungs-Trigger:** Aufloesung von
   [CO-004](../docs/plan/carveouts/CO-004-durchsetzungsschicht.md).
 
+### MR-005 — Aufhebung von MR-003: next/-Stufe eingefuehrt
+
+- **Datum:** 2026-06-12
+- **Geltungsbereich:** `docs/plan/planning/`
+- **Adaption:** hebt MR-003 auf. Der Planning-Lifecycle folgt wieder
+  dem Baseline-Default open → next → in-progress → done;
+  `docs/plan/planning/next/` ist angelegt.
+- **Begruendung:** Nutzerentscheid zur Baseline-Konformitaet im Zuge
+  der d-check-Scharfschaltung
+  ([slice-002](../docs/plan/planning/done/slice-002-d-check-ids-matrix.md)).
+- **Aufloesungs-Trigger:** permanent.
+
 ## Repo-lokale Schreib- und Strukturregeln
 
 - Dokumentationssprache ist Deutsch; neue Texte in umlautfreier
@@ -129,8 +142,8 @@ Reproduzierbarkeit) gelten ohne Deklaration.
 | ----------------------- | ----- | ----------- | ---------------------------------- |
 | Spezifikation und Planung (`spec/`, `docs/plan/`) | GF | Doku fuehrt; Lastenheft 1.1, Architektur, ADRs und Roadmap existieren vor jedem Code. | n/a (GF) |
 | Anwender-Doku (`docs/user/`) | GF | Doku fuehrt; beschreibt geplantes Verhalten aus dem Lastenheft. | n/a (GF) |
-| Anwendungscode (noch nicht vorhanden) | GF | Phase 0; Code folgt der Doku, erster Slice ist RM-M1-01. | n/a (GF) |
-| Build- und Doku-Tooling (`Makefile`, `Dockerfile`, `.d-check.yml`) | BF | Code existierte vor der Harness-Doku; Sensor-Deklaration folgt dem Tooling. | Graduation zu GF, wenn CO-002 aufgeloest ist und die Sensors-Tabelle in [README.md](README.md) alle gebundenen Gates traegt (RM-M1-09). Konvergenz-Auftrag: Sensor-Deklaration bei jeder Tooling-Aenderung nachfuehren. |
+| Anwendungscode (noch nicht vorhanden) | GF | Phase 0; Code folgt der Doku, erster Slice ist [RM-M1-01](../docs/plan/planning/in-progress/roadmap.md). | n/a (GF) |
+| Build- und Doku-Tooling (`Makefile`, `Dockerfile`, `.d-check.yml`) | BF | Code existierte vor der Harness-Doku; Sensor-Deklaration folgt dem Tooling. | Graduation zu GF, wenn [CO-002](../docs/plan/carveouts/CO-002-code-sensors.md) aufgeloest ist und die Sensors-Tabelle in [README.md](README.md) alle gebundenen Gates traegt ([RM-M1-09](../docs/plan/planning/in-progress/roadmap.md)). Konvergenz-Auftrag: Sensor-Deklaration bei jeder Tooling-Aenderung nachfuehren. |
 
 ## Glossar
 

@@ -20,7 +20,7 @@ gegenueber der adoptierten Baseline leben in
 | Rang | Datei | Charakter |
 | ---- | ----- | --------- |
 | 1 | [spec/lastenheft.md](../spec/lastenheft.md) | vertraglich abnahmebindend |
-| 2 | `spec/spezifikation.md` | technisch fortschreibbar — noch nicht vorhanden, siehe MR-002 und CO-001 |
+| 2 | `spec/spezifikation.md` | technisch fortschreibbar — noch nicht vorhanden, siehe [MR-002](conventions.md) und [CO-001](../docs/plan/carveouts/CO-001-spezifikation-stratum.md) |
 | 3 | [spec/architecture.md](../spec/architecture.md) | Komponenten/Sequenzen, meilensteinfrei |
 | 4 | [docs/plan/adr/README.md](../docs/plan/adr/README.md) | ADR-Index |
 | 5 | [docs/plan/planning/in-progress/roadmap.md](../docs/plan/planning/in-progress/roadmap.md) | Roadmap und aktuelle Welle |
@@ -48,35 +48,42 @@ hoehere. ADRs duerfen die Spezifikation schaerfen, nie das Lastenheft.
 
 Nur Make-Targets, die real existieren und ohne Gradle-Build laufen.
 Lauf-Wahrheit liegt lokal bei `make gates`; eine CI-Plattform ist noch
-nicht entschieden (RM-OPEN-006).
+nicht entschieden
+([RM-OPEN-006](../docs/plan/planning/in-progress/roadmap.md)).
 
 | Target | Vertrag | Bindung |
 | ------ | ------- | ------- |
-| `make docs-check` | Markdown-Links und Anker im gesamten Repo (inkl. `harness/`) loesen auf | Reproduzierbarkeit: d-check v0.2.0 Digest-gepinnt; ADR-0002 |
-| `make gates` | alle inneren Gates; traegt aktuell nur `docs-check` | CO-002 |
+| `make docs-check` | Markdown-Links und Anker im gesamten Repo loesen auf; nackte Kennungen im Fliesstext verlinken auf ihre Definition (ids); Spec-Straten verweisen nie abwaerts auf ADRs oder Slices (matrix) | Reproduzierbarkeit: d-check v0.2.0 Digest-gepinnt; [ADR-0002](../docs/plan/adr/0002-harness-bootstrap.md); ids/matrix: [slice-002](../docs/plan/planning/done/slice-002-d-check-ids-matrix.md) |
+| `make gates` | alle inneren Gates; traegt aktuell nur `docs-check` | [CO-002](../docs/plan/carveouts/CO-002-code-sensors.md) |
 | `make docker-docs-check` | wie `docs-check`, im Docker-Build | — |
 
 **Nicht behauptet** (vorhanden, aber erst mit Gradle-Build wirksam):
 `make ci-build`, `make docker-check`, `make docker-test`, `make clean`
-— Bindung entsteht mit der Aufloesung von CO-002.
+— Bindung entsteht mit der Aufloesung von
+[CO-002](../docs/plan/carveouts/CO-002-code-sensors.md).
 **Nicht vorhanden** (geplant): Lint-, Architektur- und Coverage-Gates
-(RM-M1-09, CO-002).
+([RM-M1-09](../docs/plan/planning/in-progress/roadmap.md),
+[CO-002](../docs/plan/carveouts/CO-002-code-sensors.md)).
 
 ## Traceability rules
 
 - Commits und PRs muessen mindestens eine Kennung nennen:
   Lastenheft-ID, Roadmap-ID (`RM-*`), ADR-Nummer oder Carveout
   (`CO-*`). Das ID-Schema ist in [conventions.md](conventions.md)
-  (MR-001) deklariert.
+  ([MR-001](conventions.md)) deklariert.
 - Neue oder geaenderte Anforderungen brauchen einen Beleg: Test, Gate,
   Demo oder ADR.
 - Neue ADRs muessen im [ADR-Index](../docs/plan/adr/README.md)
   ergaenzt werden.
-- Planning-Dokumente folgen dem Lifecycle open → in-progress → done
-  (ohne `next/`-Stufe, siehe MR-003); reine Verschiebungen als
-  eigener `git mv`-Commit (AGENTS.md, Hard Rules).
-- Eine mechanische Durchsetzung existiert noch nicht (CO-003); bis
-  dahin gelten die Regeln konventionell.
+- Planning-Dokumente folgen dem Lifecycle open → next → in-progress
+  → done ([MR-005](conventions.md) hebt [MR-003](conventions.md)
+  auf); reine Verschiebungen als eigener `git mv`-Commit (AGENTS.md,
+  Hard Rules).
+- Die Doku-Seite (Linkpflicht fuer Kennungen) prueft das ids-Modul
+  von d-check; eine mechanische Durchsetzung in Commits existiert
+  noch nicht
+  ([CO-003](../docs/plan/carveouts/CO-003-traceability-mechanik.md)),
+  dort gilt die Regel konventionell.
 
 ## Safety and scope boundaries
 

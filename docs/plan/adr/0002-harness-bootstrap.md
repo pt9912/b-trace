@@ -76,15 +76,20 @@ ausschliesslich als Carveout (`CO-*`) mit Aufloesungs-Trigger.
 ## Konsequenzen
 
 - Positiv: Agentenarbeit beginnt bei `AGENTS.md` und folgt einem
-  pruefbaren Workflow; die Luecken des Harness sind als CO-001 bis
-  CO-004 explizit statt implizit.
+  pruefbaren Workflow; die Luecken des Harness sind als
+  [CO-001](../carveouts/CO-001-spezifikation-stratum.md) bis
+  [CO-004](../carveouts/CO-004-durchsetzungsschicht.md) explizit
+  statt implizit.
 - Negativ: zusaetzliche Pflegepflicht — Sensor-Deklarationen,
   ADR-Index und Carveout-Status muessen aktuell gehalten werden,
   sonst entsteht genau die Doku-Drift, die der Harness verhindern
   soll.
 - Folgepflicht: Carveout-Aufloesungen haengen an der Roadmap
-  (RM-OPEN-001/002, RM-M1-01, RM-M1-09); ihre Trigger werden dort
-  mitverfolgt.
+  ([RM-OPEN-001](../planning/in-progress/roadmap.md),
+  [RM-OPEN-002](../planning/in-progress/roadmap.md),
+  [RM-M1-01](../planning/in-progress/roadmap.md),
+  [RM-M1-09](../planning/in-progress/roadmap.md)); ihre Trigger
+  werden dort mitverfolgt.
 
 ## Fitness Function
 
@@ -93,11 +98,15 @@ ausschliesslich als Carveout (`CO-*`) mit Aufloesungs-Trigger.
 | d-check (Digest-gepinnt) | alle in README, `spec/` und `docs/` referenzierten Pfade und Anker existieren — die hier beschlossenen Artefakte koennen nicht stillschweigend verschwinden | `make docs-check` |
 
 Weitergehende mechanische Pruefung (Traceability-Hook,
-Durchsetzungsschicht) existiert bewusst noch nicht: CO-003, CO-004.
+Durchsetzungsschicht) existiert bewusst noch nicht:
+[CO-003](../carveouts/CO-003-traceability-mechanik.md),
+[CO-004](../carveouts/CO-004-durchsetzungsschicht.md).
 
 ## Re-Evaluierungs-Trigger
 
-- Start von Meilenstein M1 (Carveouts CO-002 bis CO-004 zuenden).
+- Start von Meilenstein M1 (Carveouts
+  [CO-002](../carveouts/CO-002-code-sensors.md) bis
+  [CO-004](../carveouts/CO-004-durchsetzungsschicht.md) zuenden).
 - Neue Kurs-Welle der Baseline mit Aenderungen an Pflichtgliederungen
   (Stand-Abgleich in `harness/conventions.md`).
 

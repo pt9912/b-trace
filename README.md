@@ -104,8 +104,9 @@ Rate-Limits, Audit-Logging und Payload-Maskierung — sind unter
 spec/                         normative Spezifikation
 docs/plan/adr/                Architekturentscheidungen (mit Index)
 docs/plan/carveouts/          Ausnahmen mit Aufloesungs-Trigger
-docs/plan/planning/in-progress/ aktive Roadmap und laufende Plaene
 docs/plan/planning/open/      offene Folgearbeiten und Trigger-Watch
+docs/plan/planning/next/      naechste geplante Welle
+docs/plan/planning/in-progress/ aktive Roadmap und laufende Plaene
 docs/plan/planning/done/      abgeschlossene Plaene
 docs/reviews/                 Review-Reports
 docs/user/                    Anwender- und Betreiber-Dokumentation

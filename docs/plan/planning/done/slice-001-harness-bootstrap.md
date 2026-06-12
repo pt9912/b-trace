@@ -4,7 +4,11 @@
 
 **Welle:** ohne Welle (Bootstrap)
 
-**Bezug:** ADR-0002, CO-001..CO-004, MR-000..MR-004
+**Bezug:** [ADR-0002](../../adr/0002-harness-bootstrap.md),
+[CO-001](../../carveouts/CO-001-spezifikation-stratum.md) bis
+[CO-004](../../carveouts/CO-004-durchsetzungsschicht.md),
+[MR-000](../../../../harness/conventions.md) bis
+[MR-004](../../../../harness/conventions.md)
 
 **Autor:** Dietmar Burkard. **Datum:** 2026-06-12.
 
@@ -20,13 +24,17 @@ Konventionsspeicher, Carveout-Register und ADR-Index anlegen.
 
 - [x] `AGENTS.md`, `harness/README.md` und `harness/conventions.md`
       existieren und folgen den Pflichtgliederungen der Templates.
-- [x] ADR-0002 (Accepted) dokumentiert die Adoption;
+- [x] [ADR-0002](../../adr/0002-harness-bootstrap.md) (Accepted)
+      dokumentiert die Adoption;
       [ADR-Index](../../adr/README.md) existiert.
-- [x] Fehlende Mechanik ist als CO-001 bis CO-004 mit
+- [x] Fehlende Mechanik ist als
+      [CO-001](../../carveouts/CO-001-spezifikation-stratum.md) bis
+      [CO-004](../../carveouts/CO-004-durchsetzungsschicht.md) mit
       Aufloesungs-Trigger deklariert
       ([Carveout-Index](../../carveouts/README.md)).
-- [x] Abweichungen gegenueber der Baseline sind als MR-000 bis MR-004
-      deklariert.
+- [x] Abweichungen gegenueber der Baseline sind als
+      [MR-000](../../../../harness/conventions.md) bis
+      [MR-004](../../../../harness/conventions.md) deklariert.
 - [x] `docs/reviews/` existiert mit Namenskonvention.
 - [x] Root-README verlinkt die neuen Artefakte.
 - [x] `make gates` gruen.
@@ -38,7 +46,7 @@ Konventionsspeicher, Carveout-Register und ADR-Index anlegen.
 | `AGENTS.md` | neu | Agent-Briefing (Template-Adoption) |
 | `harness/README.md`, `harness/conventions.md` | neu | Harness-Einstieg und Konventionsspeicher |
 | `docs/plan/adr/README.md`, `docs/plan/adr/0002-harness-bootstrap.md` | neu | ADR-Index und Adoptions-Entscheidung |
-| `docs/plan/carveouts/` | neu | Index plus CO-001..CO-004 |
+| `docs/plan/carveouts/` | neu | Index plus [CO-001](../../carveouts/CO-001-spezifikation-stratum.md) bis [CO-004](../../carveouts/CO-004-durchsetzungsschicht.md) |
 | `docs/reviews/README.md` | neu | Review-Ablage |
 | `README.md` | update | Doku-Verweise und Struktur |
 
@@ -55,12 +63,16 @@ DoD vollstaendig, `make gates` gruen, Commit mit Kennungs-Referenz.
 
 - Baseline referenziert `main` des Kurs-Repos; bei neuen Kurs-Wellen
   kann der adoptierte Stand driften (Re-Evaluierungs-Trigger in
-  ADR-0002).
-- Die Durchsetzung bleibt bis M1 konventionell (CO-003, CO-004).
+  [ADR-0002](../../adr/0002-harness-bootstrap.md)).
+- Die Durchsetzung bleibt bis M1 konventionell
+  ([CO-003](../../carveouts/CO-003-traceability-mechanik.md),
+  [CO-004](../../carveouts/CO-004-durchsetzungsschicht.md)).
 
 ## 7. Closure-Notiz (nach `done/`)
 
-- Funktioniert: Die bestehende Struktur aus ADR-0001 deckte die
+- Funktioniert: Die bestehende Struktur aus
+  [ADR-0001](../../adr/0001-documentation-and-planning-structure.md)
+  deckte die
   Baseline-Verzeichniskonvention bereits weitgehend; der Bootstrap
   war reine Doku-Arbeit ohne Konflikt mit kanonischen Quellen.
 - Anders als geplant: Der erste Wurf der Harness-Dateien entstand aus
@@ -71,7 +83,9 @@ DoD vollstaendig, `make gates` gruen, Commit mit Kennungs-Referenz.
   laden, nicht aus der Regelwerk-Prosa rekonstruieren — die
   Template-Pfade stehen im Regelwerk selbst.
 - Folgearbeiten: keine neuen `open/`-Eintraege; alle bekannten
-  Luecken sind als CO-001..CO-004 erfasst.
+  Luecken sind als
+  [CO-001](../../carveouts/CO-001-spezifikation-stratum.md) bis
+  [CO-004](../../carveouts/CO-004-durchsetzungsschicht.md) erfasst.
 
 ## 8. Sub-Area-Modus-Begruendung
 

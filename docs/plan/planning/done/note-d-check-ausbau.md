@@ -1,8 +1,11 @@
 # Notiz: d-check-Ausbau auf ids- und matrix-Modul
 
 **Dokumenttyp:** Vorabklaerung / Trigger-Watch
-**Status:** Offen
-**Bezug:** ADR-0002, CO-003, `.d-check.yml`
+**Status:** Umgesetzt (2026-06-12; beide Items per Nutzerauftrag
+aktiviert, siehe [slice-002](slice-002-d-check-ids-matrix.md))
+**Bezug:** [ADR-0002](../../adr/0002-harness-bootstrap.md),
+[CO-003](../../carveouts/CO-003-traceability-mechanik.md),
+`.d-check.yml`
 
 ---
 
@@ -26,14 +29,16 @@ oder Start von M1.
   `RM-(M\d|OPEN)-\d+` → Roadmap.
 - Bestehende nackte Kennungen im Fliesstext verlinken (einmalige
   Aufraeumarbeit, betrifft u. a. Harness- und Carveout-Dateien).
-- Teilbeitrag zu CO-003 (Doku-Seite der Traceability), ersetzt aber
-  nicht den Commit-Hook.
+- Teilbeitrag zu
+  [CO-003](../../carveouts/CO-003-traceability-mechanik.md)
+  (Doku-Seite der Traceability), ersetzt aber nicht den Commit-Hook.
 
 ## Item F-DC-02: matrix-Modul (Referenz-Richtung)
 
 **Trigger:** Erste Abwaerts-Referenz aus einem Spec-Stratum auf ADRs
 oder Planning-Artefakte wird im Review gefunden, oder Anlage von
-`spec/spezifikation.md` (Aufloesung CO-001).
+`spec/spezifikation.md` (Aufloesung
+[CO-001](../../carveouts/CO-001-spezifikation-stratum.md)).
 
 **Scope-Skizze:**
 

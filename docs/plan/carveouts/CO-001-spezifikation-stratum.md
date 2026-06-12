@@ -10,7 +10,7 @@ Precedence, Rang 2)
 **Geltungsbereich:** `spec/`
 
 **Folge-Slice:** — entsteht beim Zuenden des Triggers (Bezug:
-RM-OPEN-001, RM-OPEN-002)
+[RM-OPEN-001](../planning/in-progress/roadmap.md), [RM-OPEN-002](../planning/in-progress/roadmap.md))
 
 ---
 
@@ -20,20 +20,20 @@ Das Projekt ist in der Anforderungsphase. Es gibt noch keine
 technischen Festlegungen, die ein eigenes, fortschreibbares
 Spezifikations-Stratum (`spec/spezifikation.md`) rechtfertigen;
 technische Festlegungen mit Abnahmebezug traegt uebergangsweise das
-Lastenheft (MR-002).
+Lastenheft ([MR-002](../../../harness/conventions.md)).
 
 ## Aufloesungs-Trigger
 
 Die erste technische Festlegung, die nicht in das Lastenheft gehoert —
-typischerweise die Entscheidung von RM-OPEN-001 (Backend-Framework)
-oder RM-OPEN-002 (Build-System) per ADR.
+typischerweise die Entscheidung von [RM-OPEN-001](../planning/in-progress/roadmap.md) (Backend-Framework)
+oder [RM-OPEN-002](../planning/in-progress/roadmap.md) (Build-System) per ADR.
 
 ## Geltungs-Konfiguration
 
 | Datei | Zeile/Section | Wert |
 | ----- | ------------- | ---- |
 | `harness/README.md` | Source precedence, Rang 2 | als nicht vorhanden markiert |
-| `harness/conventions.md` | MR-002 | Adaption deklariert |
+| `harness/conventions.md` | [MR-002](../../../harness/conventions.md) | Adaption deklariert |
 
 ## Verifikation (nach Aufloesung)
 
@@ -41,7 +41,7 @@ oder RM-OPEN-002 (Build-System) per ADR.
       ADR-geschaerfte Festlegung.
 - [ ] Source-Precedence-Tabellen in `harness/README.md` und
       `AGENTS.md` verlinken Rang 2.
-- [ ] MR-002 per neuem `MR`-Eintrag aufgehoben.
+- [ ] [MR-002](../../../harness/conventions.md) per neuem `MR`-Eintrag aufgehoben.
 - [ ] `make gates` gruen.
 - [ ] Datei nach `docs/plan/carveouts/done/` bewegt (reiner `git mv`).
 

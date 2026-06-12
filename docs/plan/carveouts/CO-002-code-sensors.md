@@ -10,7 +10,7 @@ Test-, Architektur- und Coverage-Gates fehlen)
 **Geltungsbereich:** gesamtes Repo (es existiert kein Code)
 
 **Folge-Slice:** — entsteht beim Zuenden des Triggers (Bezug:
-RM-M1-01, RM-M1-09)
+[RM-M1-01](../planning/in-progress/roadmap.md), [RM-M1-09](../planning/in-progress/roadmap.md))
 
 ---
 
@@ -23,9 +23,9 @@ Lastenheft sind damit deklariert, aber noch nicht durchgesetzt.
 
 ## Aufloesungs-Trigger
 
-RM-M1-01 (Projekt- und Modulstruktur): Mit dem ersten Build werden
+[RM-M1-01](../planning/in-progress/roadmap.md) (Projekt- und Modulstruktur): Mit dem ersten Build werden
 Gradle check, Architekturtests und Coverage-Gates an `make gates`
-gebunden (RM-M1-09) und in der Sensors-Tabelle in
+gebunden ([RM-M1-09](../planning/in-progress/roadmap.md)) und in der Sensors-Tabelle in
 `harness/README.md` deklariert.
 
 ## Geltungs-Konfiguration

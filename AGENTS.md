@@ -28,7 +28,9 @@ In dieser Reihenfolge:
 
 1. [spec/lastenheft.md](spec/lastenheft.md) — vertraglich
    abnahmebindend.
-2. `spec/spezifikation.md` — noch nicht vorhanden (MR-002, CO-001).
+2. `spec/spezifikation.md` — noch nicht vorhanden
+   ([MR-002](harness/conventions.md),
+   [CO-001](docs/plan/carveouts/CO-001-spezifikation-stratum.md)).
 3. [spec/architecture.md](spec/architecture.md) — Komponenten- und
    Verantwortungssicht.
 4. [docs/plan/adr/README.md](docs/plan/adr/README.md) — ADR-Index.
@@ -91,19 +93,21 @@ Nur Targets, die existieren und ohne Gradle-Build wirksam sind
 
 | Target | Zweck |
 | ------ | ----- |
-| `make docs-check` | Markdown-Links und Anker pruefen (d-check) |
+| `make docs-check` | Links, Anker, Kennungs-Linkpflicht und Referenzmatrix pruefen (d-check) |
 | `make gates` | alle inneren Gates; mandatory vor Handoff |
 | `make docker-docs-check` | Doku-Check im Docker-Build |
 
 Code-Gates (Build, Test, Architektur, Coverage) existieren noch nicht
-— siehe CO-002. Sie werden erst behauptet, wenn sie real laufen.
+— siehe [CO-002](docs/plan/carveouts/CO-002-code-sensors.md). Sie
+werden erst behauptet, wenn sie real laufen.
 
 ## 5. Dokumentations-Regeln
 
 - Kennungen muessen in Commits/PRs referenziert sein. Vergeben werden
   sie beim Spec-/ADR-Schreiben nach dem in
-  [harness/conventions.md](harness/conventions.md) (MR-001)
-  deklarierten Schema — nie ad hoc im PR.
+  [harness/conventions.md](harness/conventions.md)
+  ([MR-001](harness/conventions.md)) deklarierten Schema — nie ad hoc
+  im PR.
 - Neue ADRs muessen den [ADR-Index](docs/plan/adr/README.md)
   aktualisieren.
 - Roadmap- und Status-Geschichte lebt in `docs/plan/planning/`, nicht
