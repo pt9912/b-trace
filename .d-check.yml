@@ -3,4 +3,5 @@
 # Default-Scan-Wurzeln (docs/, spec/, Root-*.md) decken den
 # Alt-Tool-Umfang ab; `anchors` ist Mehr-Abdeckung (das Alt-Tool
 # prüfte nur Link-Existenz).
+# Beschreibung siehe: https://raw.githubusercontent.com/pt9912/d-check/refs/heads/main/README.md
 modules: [links, anchors]
