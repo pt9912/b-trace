@@ -92,20 +92,26 @@ Rate-Limits, Audit-Logging und Payload-Maskierung — sind unter
 - [Lastenheft](spec/lastenheft.md): Produktziele, funktionale Anforderungen, Quality Gates, Abnahmekriterien und Definition of Done.
 - [Architektur](spec/architecture.md): Zielarchitektur, Komponenten, Ports, Adapter, Datenfluesse und offene Architekturpunkte.
 - [Roadmap](docs/plan/planning/in-progress/roadmap.md): geplanter Umsetzungsverlauf mit Meilensteinen und Abnahmeschnitten.
-- [ADRs](docs/plan/adr): dokumentierte Architekturentscheidungen.
+- [ADR-Index](docs/plan/adr/README.md): dokumentierte Architekturentscheidungen.
 - [User-Dokumentation](docs/user): anwender- und betreibernahe Erklaerungen zu Funktion, Replay-Sicherheit und Qualitaet.
+- [Harness](harness/README.md): Source Precedence, Guides, Sensors und Agent-Workflow; Agent-Briefing in [AGENTS.md](AGENTS.md).
+- [Carveouts](docs/plan/carveouts/README.md): dokumentierte Ausnahmen mit Aufloesungs-Trigger.
 - [Changelog](CHANGELOG.md): nachvollziehbare Aenderungen am Projektstand.
 
 ## Dokumentationsstruktur
 
 ```text
 spec/                         normative Spezifikation
-docs/plan/adr/                Architekturentscheidungen
+docs/plan/adr/                Architekturentscheidungen (mit Index)
+docs/plan/carveouts/          Ausnahmen mit Aufloesungs-Trigger
 docs/plan/planning/in-progress/ aktive Roadmap und laufende Plaene
 docs/plan/planning/open/      offene Folgearbeiten und Trigger-Watch
 docs/plan/planning/done/      abgeschlossene Plaene
+docs/reviews/                 Review-Reports
 docs/user/                    Anwender- und Betreiber-Dokumentation
 docs/archive/                 historische oder unverbindliche Ideenskizzen
+harness/                      Harness-Einstieg und Konventionen
+AGENTS.md                     Agent-Briefing
 ```
 
 ## Entwicklung

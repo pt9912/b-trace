@@ -1,7 +1,11 @@
 # Doku-Referenz-Checks via d-check (ghcr.io/pt9912/d-check) — ersetzt
 # scripts/verify-doc-refs.sh (Rollout 2026-06-12, Shell-Familie).
-# Default-Scan-Wurzeln (docs/, spec/, Root-*.md) decken den
-# Alt-Tool-Umfang ab; `anchors` ist Mehr-Abdeckung (das Alt-Tool
-# prüfte nur Link-Existenz).
+# "." = gesamte Repo-Wurzel (SKIP_DIRS wie .git gelten immer), damit
+# auch harness/ gescannt wird (Harness-Bootstrap, ADR-0002);
+# `anchors` ist Mehr-Abdeckung (das Alt-Tool pruefte nur
+# Link-Existenz). Ausbau auf ids/matrix: siehe
+# docs/plan/planning/open/note-d-check-ausbau.md
 # Beschreibung siehe: https://raw.githubusercontent.com/pt9912/d-check/refs/heads/main/README.md
+scan:
+  roots: ["."]
 modules: [links, anchors]
