@@ -8,10 +8,8 @@ scan:
   roots: ["."]
 modules: [links, anchors, ids, matrix]
 
-# Linkpflicht fuer Kennungen (F-DC-01): nackte IDs im Fliesstext
-# muessen auf ihre Definition verlinken. Lastenheft-Kennungen (M-,
-# AB-, F-*, ...) bleiben bewusst ohne Linkpflicht, bis das
-# Spezifikations-Stratum existiert (CO-001).
+# Linkpflicht fuer Kennungen (F-DC-01, Vollausbau slice-003): nackte
+# IDs im Fliesstext muessen auf ihre Definition verlinken.
 ids:
   patterns:
     - regex: 'ADR-\d{4}'
@@ -24,6 +22,14 @@ ids:
       target: docs/plan/planning/in-progress/roadmap.md
     - regex: 'slice-\d{3}'
       target: docs/plan/planning/
+    - regex: 'F-(REQ|INC|REP|DAT|SEC|OBS)-\d{3}'
+      target: spec/lastenheft.md
+    - regex: 'Q-(MNT|PERF|SEC)-\d{3}'
+      target: spec/lastenheft.md
+    - regex: '(M|W|A|PE|ROLE|D|IF|AB|DEP|COV)-\d{3}'
+      target: spec/lastenheft.md
+    - regex: 'AR-(P|OPEN)-\d{3}'
+      target: spec/architecture.md
 
 # Referenzmatrix (F-DC-02): Spec-Straten verweisen nie abwaerts auf
 # ADRs oder Planning-Artefakte (Stable Dependencies Principle der

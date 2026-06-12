@@ -94,7 +94,8 @@ nicht entschieden
   Change Request mit Eintrag in der Aenderungshistorie.
 - Offene Roadmap-Entscheidungen (`RM-OPEN-xxx`) werden nicht implizit
   getroffen, sondern per ADR geschlossen.
-- Abgrenzungen A-001 bis A-004 aus dem Lastenheft gelten: kein SIEM,
+- Abgrenzungen [A-001](../spec/lastenheft.md) bis
+  [A-004](../spec/lastenheft.md) aus dem Lastenheft gelten: kein SIEM,
   kein Ticket-System, keine BPM-Engine, keine Legacy-Monolithen.
 
 ## Minimal agent workflow

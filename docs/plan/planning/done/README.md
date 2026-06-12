@@ -9,5 +9,6 @@ Abgeschlossen:
 - [slice-002: d-check scharf schalten](slice-002-d-check-ids-matrix.md)
   (inkl. umgesetzter
   [Trigger-Watch-Notiz](note-d-check-ausbau.md))
+- [slice-003: ids-Vollausbau](slice-003-ids-vollausbau.md)
 
 Noch kein Code-Umsetzungsslice abgeschlossen.

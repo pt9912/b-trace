@@ -18,7 +18,8 @@ Test-, Architektur- und Coverage-Gates fehlen)
 
 Bootstrap: Es existiert kein Gradle-Build, also gibt es nichts, woran
 Build-, Test-, Architektur- oder Coverage-Gates pruefbar waeren. Die
-Coverage-Ziele COV-001 bis COV-003 und die Architektur-Gates aus dem
+Coverage-Ziele [COV-001](../../../spec/lastenheft.md) bis
+[COV-003](../../../spec/lastenheft.md) und die Architektur-Gates aus dem
 Lastenheft sind damit deklariert, aber noch nicht durchgesetzt.
 
 ## Aufloesungs-Trigger
